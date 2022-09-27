@@ -1,0 +1,20 @@
+[package]
+name = "bbl-usd"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "gen-usd"
+path = "src/gen.rs"
+
+[dependencies]
+anyhow = "1.0.65"
+bbl = {path="../babble/bbl"}
+env_logger = "0.9.1"
+log = "0.4.17"
+
+[build-dependencies]
+anyhow = "1.0.65"
+bbl = {path="../babble/bbl"}
