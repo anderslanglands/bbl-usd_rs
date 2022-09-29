@@ -2,10 +2,10 @@ use anyhow::Result;
 use bbl::*;
 use std::path::{Path, PathBuf};
 
-pub fn main() -> Result<()> {        
+pub fn main() -> Result<()> {
     env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("debug"))
-            .format_timestamp(None)
-            .init();
+        .format_timestamp(None)
+        .init();
 
     // Point CMake to our library. In a real project we would probably expect this to be done by setting CMAKE_PREFIX_PATH
     // directly in the environment, or perhaps with a config file
@@ -40,6 +40,7 @@ pub fn main() -> Result<()> {
         // c++ it has to exract, the less likely it is to choke on constructs we haven't implemented yet)
         limit_to_namespace: Some(namespace_internal),
         allow_list: AllowList::new(allow_list),
+        // compile_definitions: &["-Wno-deprecated"],
         ..Default::default()
     };
 
@@ -50,6 +51,15 @@ pub fn main() -> Result<()> {
     // namespace, "Test_1_0". We could also ignore and rename methods, try and override bind kinds of classes etc.
     let ns = ast.find_namespace(namespace_internal)?;
     ast.rename_namespace(ns, namespace_external);
+
+    let id_vtvalue = ast.find_class("VtValue")?;
+    let method = ast.find_method(id_vtvalue, "VtValue(const T &)")?;
+    ast.specialize_method(
+        id_vtvalue,
+        method,
+        "ctor_float",
+        vec![TemplateArgument::Type(QualType::float())],
+    )?;
 
     let out_dir = std::env::var("OUT_DIR").unwrap();
     let ffi_path = Path::new(&std::env::var("CARGO_MANIFEST_DIR").unwrap())

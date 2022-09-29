@@ -30,6 +30,8 @@ pub use internal::pxrInternal_v0_22__pxrReserved___VtValue_GetArraySize as pxr_V
 
 pub use internal::pxrInternal_v0_22__pxrReserved___VtValue_GetTypeName as pxr_VtValue_GetTypeName;
 
+pub use internal::pxrInternal_v0_22__pxrReserved___VtValue_assign_float as pxr_VtValue_assign_float;
+
 
 mod internal {
 
@@ -72,6 +74,8 @@ pub fn pxrInternal_v0_22__pxrReserved___VtValue_dtor(this_: *mut pxr_VtValue);
 pub fn pxrInternal_v0_22__pxrReserved___VtValue_GetArraySize(this_: *const pxr_VtValue, result: *mut size_t);
 
 pub fn pxrInternal_v0_22__pxrReserved___VtValue_GetTypeName(this_: *const pxr_VtValue, result: *mut std_string);
+
+pub fn pxrInternal_v0_22__pxrReserved___VtValue_assign_float(result: *mut *mut pxr_VtValue, obj: *mut c_float);
 
 } // extern C
 } // mod internal
