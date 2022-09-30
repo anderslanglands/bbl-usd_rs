@@ -21,6 +21,27 @@ pub fn main() -> Result<()> {
         r"^pxr::VtValue::~VtValue\(\)$",
         r"^pxr::VtValue::GetArraySize\(\)$",
         r"^pxr::VtValue::GetTypeName\(\)$",
+        r"^pxr::VtValue::IsHolding\(\)$",
+        r"^pxr::VtValue::IsArrayValued\(\)$",
+        r"^pxr::VtValue::Remove\(\)$",
+        r"^pxr::VtValue::GetTypeName\(\)$",
+        r"^pxr::VtValue::Get\(\)$",
+        r"^pxr::VtValue::GetWithDefault\(.*\)$",
+        r"^pxr::VtValue::GetTypeid\(.*\)$",
+        r"^pxr::VtValue::GetElementTypeid\(.*\)$",
+        r"^pxr::VtValue::IsEmpty\(.*\)$",
+        r"^pxr::VtValue::Cast\(.*\)$",
+        r"^pxr::VtValue::CastToTypeOf\(.*\)$",
+        r"^pxr::VtValue::CanCastToTypeid\(.*\)$",
+        r"^pxr::VtValue::CanHash\(.*\)$",
+        r"^pxr::VtValue::GetHash\(.*\)$",
+        r"^pxr::VtValue::operator==\(.*\)$",
+        r"^::std::type_info::operator==.*$",
+        r"^::std::type_info::__name$",             // libstdc++
+        r"^::std::type_info::__undecorated_name$", // libcxx
+        r"^::std::type_info::__decorated_name$",
+        r"^::std::type_info::_UndecoratedName$", // msvc
+        r"^::std::type_info::_DecoratedName$",
     ];
 
     let allow_list: Vec<String> = allow_list
@@ -53,13 +74,24 @@ pub fn main() -> Result<()> {
     ast.rename_namespace(ns, namespace_external);
 
     let id_vtvalue = ast.find_class("VtValue")?;
-    let method = ast.find_method(id_vtvalue, "VtValue(const T &)")?;
-    ast.specialize_method(
+
+    specialize_methods(
+        &mut ast,
         id_vtvalue,
-        method,
-        "ctor_float",
-        vec![TemplateArgument::Type(QualType::float())],
+        &[
+            "VtValue(const T &)",
+            "IsHolding",
+            "Remove",
+            "Get(",
+            "GetWithDefault(",
+            "Cast(",
+        ],
+        &[(QualType::float(), "float")],
     )?;
+
+    // we need to force type_info to ValueType
+    let type_info_id = ast.find_class("type_info")?;
+    ast.class_set_bind_kind(type_info_id, ClassBindKind::ValueType)?;
 
     let out_dir = std::env::var("OUT_DIR").unwrap();
     let ffi_path = Path::new(&std::env::var("CARGO_MANIFEST_DIR").unwrap())
@@ -72,6 +104,30 @@ pub fn main() -> Result<()> {
     // we also copy the generated ffi.rs into the source tree. This isn't hygienic but using the "correct" method of
     // include!'ing it into the source stops rust-analyzer from working on it, which is worse.
     bind("usd", &out_dir, Some(&ffi_path), &ast, &options)?;
+
+    Ok(())
+}
+
+pub fn specialize_methods(
+    ast: &mut AST,
+    class_id: ClassId,
+    signatures: &[&str],
+    types: &[(QualType, &str)],
+) -> Result<()> {
+    for sig in signatures {
+        let (method_ids, _) = ast.find_methods(class_id, sig)?;
+
+        for method_id in method_ids {
+            for ty in types {
+                ast.specialize_method(
+                    class_id,
+                    method_id,
+                    &format!("{}_{}", ast.method_name(class_id, method_id), ty.1),
+                    vec![TemplateArgument::Type(ty.0.clone())],
+                )?;
+            }
+        }
+    }
 
     Ok(())
 }
