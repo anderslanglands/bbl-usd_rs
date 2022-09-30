@@ -14,8 +14,79 @@ pub fn main() -> Result<()> {
     let namespace_internal = "pxrInternal_v0_22__pxrReserved__";
     let namespace_external = "pxr";
 
-    let allow_list = [
+    let mut allow_list = vec![
         r"^pxr$",
+    ];
+    let mut binding_includes = vec![];
+
+    let mut binding_fns = Vec::new();
+
+    binding_fns.push(bind_vtvalue(&mut allow_list, &mut binding_includes));
+
+    let allow_list: Vec<String> = allow_list
+        .iter()
+        .map(|s| s.replace(namespace_external, namespace_internal))
+        .collect();
+
+    let options = BindOptions {
+        // We use CMake to configure the compilation and linking of our shim library, so need to point CMAKE_PREFIX_PATH
+        // to find the target cpp library as well as provide the library name for find_package() and the actual targets
+        // to link against
+        cmake_prefix_path: Some(cmake_prefix_path),
+        find_packages: &["pxr REQUIRED"],
+        link_libraries: &["vt"],
+        // We can limit our extraction to a single namespace in the target library. This is usually a good idea to
+        // avoid doing extra work (bbl-extract will extract everything it finds, even if it's never used, and the less
+        // c++ it has to exract, the less likely it is to choke on constructs we haven't implemented yet)
+        limit_to_namespace: Some(namespace_internal),
+        allow_list: AllowList::new(allow_list),
+        // compile_definitions: &["-Wno-deprecated"],
+        ..Default::default()
+    };
+
+    // parse the given cpp snippet, which just includes the header of the library we want to bind, giving us an AST
+    let include_str = binding_includes.join("\n");
+    let mut ast = parse(&include_str, &options)?;
+
+    // Now that we have the AST, we can manipulate it, for example to give an external name to the versioned internal
+    // namespace, "Test_1_0". We could also ignore and rename methods, try and override bind kinds of classes etc.
+    let ns = ast.find_namespace(namespace_internal)?;
+    ast.rename_namespace(ns, namespace_external);
+
+    // now call all the binding functions to manipulate the ast
+    for fun in binding_fns {
+        fun(&mut ast)?;
+    }
+
+    let out_dir = std::env::var("OUT_DIR").unwrap();
+    let ffi_path = Path::new(&std::env::var("CARGO_MANIFEST_DIR").unwrap())
+        .join("src")
+        .join("ffi.rs")
+        .to_string_lossy()
+        .to_string();
+
+    // Now bind the AST, which will write, compile and link a shim library, and create the rust ffi binding
+    // we also copy the generated ffi.rs into the source tree. This isn't hygienic but using the "correct" method of
+    // include!'ing it into the source stops rust-analyzer from working on it, which is worse.
+    bind("usd", &out_dir, Some(&ffi_path), &ast, &options)?;
+
+    Ok(())
+}
+
+fn bind_usd_prim(allow_list: &mut Vec<&str>) -> Box<dyn Fn(&mut AST) -> Result<()>> {
+    allow_list.extend_from_slice(&[
+        r"^pxr::UsdPrim$",
+    ]);
+
+    Box::new(|ast: &mut AST| {
+        Ok(())
+    })
+}
+
+fn bind_vtvalue(allow_list: &mut Vec<&str>, includes: &mut Vec<&str>) -> Box<dyn Fn(&mut AST) -> Result<()>> {
+    includes.push("#include <pxr/base/vt/value.h>");
+
+    allow_list.extend_from_slice(&[
         r"^pxr::VtValue$",
         r"^pxr::VtValue::VtValue\(.*\)$",
         r"^pxr::VtValue::~VtValue\(\)$",
@@ -42,70 +113,31 @@ pub fn main() -> Result<()> {
         r"^::std::type_info::__decorated_name$",
         r"^::std::type_info::_UndecoratedName$", // msvc
         r"^::std::type_info::_DecoratedName$",
-    ];
+    ]);
 
-    let allow_list: Vec<String> = allow_list
-        .iter()
-        .map(|s| s.replace(namespace_external, namespace_internal))
-        .collect();
+    Box::new(|ast: &mut AST| {
+        let id_vtvalue = ast.find_class("VtValue")?;
 
-    let options = BindOptions {
-        // We use CMake to configure the compilation and linking of our shim library, so need to point CMAKE_PREFIX_PATH
-        // to find the target cpp library as well as provide the library name for find_package() and the actual targets
-        // to link against
-        cmake_prefix_path: Some(cmake_prefix_path),
-        find_packages: &["pxr REQUIRED"],
-        link_libraries: &["vt"],
-        // We can limit our extraction to a single namespace in the target library. This is usually a good idea to
-        // avoid doing extra work (bbl-extract will extract everything it finds, even if it's never used, and the less
-        // c++ it has to exract, the less likely it is to choke on constructs we haven't implemented yet)
-        limit_to_namespace: Some(namespace_internal),
-        allow_list: AllowList::new(allow_list),
-        // compile_definitions: &["-Wno-deprecated"],
-        ..Default::default()
-    };
+        specialize_methods(
+            ast,
+            id_vtvalue,
+            &[
+                "VtValue(const T &)",
+                "IsHolding",
+                "Remove",
+                "Get(",
+                "GetWithDefault(",
+                "Cast(",
+            ],
+            &[(QualType::float(), "float")],
+        )?;
 
-    // parse the given cpp snippet, which just includes the header of the library we want to bind, giving us an AST
-    let mut ast = parse("#include <pxr/base/vt/value.h>\n", &options)?;
+        // we need to force type_info to ValueType
+        let type_info_id = ast.find_class("type_info")?;
+        ast.class_set_bind_kind(type_info_id, ClassBindKind::ValueType)?;
 
-    // Now that we have the AST, we can manipulate it, for example to give an external name to the versioned internal
-    // namespace, "Test_1_0". We could also ignore and rename methods, try and override bind kinds of classes etc.
-    let ns = ast.find_namespace(namespace_internal)?;
-    ast.rename_namespace(ns, namespace_external);
-
-    let id_vtvalue = ast.find_class("VtValue")?;
-
-    specialize_methods(
-        &mut ast,
-        id_vtvalue,
-        &[
-            "VtValue(const T &)",
-            "IsHolding",
-            "Remove",
-            "Get(",
-            "GetWithDefault(",
-            "Cast(",
-        ],
-        &[(QualType::float(), "float")],
-    )?;
-
-    // we need to force type_info to ValueType
-    let type_info_id = ast.find_class("type_info")?;
-    ast.class_set_bind_kind(type_info_id, ClassBindKind::ValueType)?;
-
-    let out_dir = std::env::var("OUT_DIR").unwrap();
-    let ffi_path = Path::new(&std::env::var("CARGO_MANIFEST_DIR").unwrap())
-        .join("src")
-        .join("ffi.rs")
-        .to_string_lossy()
-        .to_string();
-
-    // Now bind the AST, which will write, compile and link a shim library, and create the rust ffi binding
-    // we also copy the generated ffi.rs into the source tree. This isn't hygienic but using the "correct" method of
-    // include!'ing it into the source stops rust-analyzer from working on it, which is worse.
-    bind("usd", &out_dir, Some(&ffi_path), &ast, &options)?;
-
-    Ok(())
+        Ok(())
+    })
 }
 
 pub fn specialize_methods(
