@@ -22,6 +22,7 @@ pub fn main() -> Result<()> {
     let mut binding_fns = Vec::new();
 
     binding_fns.push(bind_vtvalue(&mut allow_list, &mut binding_includes));
+    binding_fns.push(bind_usd_prim(&mut allow_list, &mut binding_includes));
 
     let allow_list: Vec<String> = allow_list
         .iter()
@@ -73,7 +74,9 @@ pub fn main() -> Result<()> {
     Ok(())
 }
 
-fn bind_usd_prim(allow_list: &mut Vec<&str>) -> Box<dyn Fn(&mut AST) -> Result<()>> {
+fn bind_usd_prim(allow_list: &mut Vec<&str>, includes: &mut Vec<&str>) -> Box<dyn Fn(&mut AST) -> Result<()>> {
+    includes.push("#include <pxr/usd/usd/prim.h>");
+
     allow_list.extend_from_slice(&[
         r"^pxr::UsdPrim$",
     ]);

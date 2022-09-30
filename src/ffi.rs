@@ -6,6 +6,8 @@
 pub use internal::_std_type_info as _std_type_info;
 pub use internal::std_string as std_string;
 pub use internal::pxrInternal_v0_22__pxrReserved___VtValue as pxr_VtValue;
+pub use internal::pxrInternal_v0_22__pxrReserved___UsdObject as pxr_UsdObject;
+pub use internal::pxrInternal_v0_22__pxrReserved___UsdPrim as pxr_UsdPrim;
 
 pub use internal::_std_type_info_op_eq as _std_type_info_op_eq;
 
@@ -67,6 +69,22 @@ pub use internal::pxrInternal_v0_22__pxrReserved___VtValue_Cast_float as pxr_VtV
 
 pub use internal::pxrInternal_v0_22__pxrReserved___VtValue_Cast_float_1 as pxr_VtValue_Cast_float_1;
 
+pub use internal::pxrInternal_v0_22__pxrReserved___UsdObject_ctor as pxr_UsdObject_ctor;
+
+pub use internal::pxrInternal_v0_22__pxrReserved___UsdObject_copy_ctor as pxr_UsdObject_copy_ctor;
+
+pub use internal::pxrInternal_v0_22__pxrReserved___UsdObject_move_ctor as pxr_UsdObject_move_ctor;
+
+pub use internal::pxrInternal_v0_22__pxrReserved___UsdObject_dtor as pxr_UsdObject_dtor;
+
+pub use internal::pxrInternal_v0_22__pxrReserved___UsdPrim_ctor as pxr_UsdPrim_ctor;
+
+pub use internal::pxrInternal_v0_22__pxrReserved___UsdPrim_copy_ctor as pxr_UsdPrim_copy_ctor;
+
+pub use internal::pxrInternal_v0_22__pxrReserved___UsdPrim_move_ctor as pxr_UsdPrim_move_ctor;
+
+pub use internal::pxrInternal_v0_22__pxrReserved___UsdPrim_dtor as pxr_UsdPrim_dtor;
+
 
 mod internal {
 
@@ -87,6 +105,18 @@ pub struct pxrInternal_v0_22__pxrReserved___VtValue {
     _unused: [u8; 0],
 }
 pub type pxr_VtValue = pxrInternal_v0_22__pxrReserved___VtValue;
+
+#[repr(C)]
+pub struct pxrInternal_v0_22__pxrReserved___UsdObject {
+    _unused: [u8; 0],
+}
+pub type pxr_UsdObject = pxrInternal_v0_22__pxrReserved___UsdObject;
+
+#[repr(C)]
+pub struct pxrInternal_v0_22__pxrReserved___UsdPrim {
+    _unused: [u8; 0],
+}
+pub type pxr_UsdPrim = pxrInternal_v0_22__pxrReserved___UsdPrim;
 
 extern "C" {
 
@@ -149,6 +179,22 @@ pub fn pxrInternal_v0_22__pxrReserved___VtValue_GetWithDefault_float(this_: *con
 pub fn pxrInternal_v0_22__pxrReserved___VtValue_Cast_float(result: *mut pxr_VtValue, val: *const pxr_VtValue);
 
 pub fn pxrInternal_v0_22__pxrReserved___VtValue_Cast_float_1(this_: *mut pxr_VtValue, result: *mut *mut pxr_VtValue);
+
+pub fn pxrInternal_v0_22__pxrReserved___UsdObject_ctor(result: *mut *mut pxr_UsdObject);
+
+pub fn pxrInternal_v0_22__pxrReserved___UsdObject_copy_ctor(result: *mut *mut pxr_UsdObject, rhs: *const pxr_UsdObject);
+
+pub fn pxrInternal_v0_22__pxrReserved___UsdObject_move_ctor(result: *mut *mut pxr_UsdObject, rhs: *const pxr_UsdObject);
+
+pub fn pxrInternal_v0_22__pxrReserved___UsdObject_dtor(this_: *mut pxr_UsdObject);
+
+pub fn pxrInternal_v0_22__pxrReserved___UsdPrim_ctor(result: *mut *mut pxr_UsdPrim);
+
+pub fn pxrInternal_v0_22__pxrReserved___UsdPrim_copy_ctor(result: *mut *mut pxr_UsdPrim, rhs: *const pxr_UsdPrim);
+
+pub fn pxrInternal_v0_22__pxrReserved___UsdPrim_move_ctor(result: *mut *mut pxr_UsdPrim, rhs: *const pxr_UsdPrim);
+
+pub fn pxrInternal_v0_22__pxrReserved___UsdPrim_dtor(this_: *mut pxr_UsdPrim);
 
 } // extern C
 } // mod internal
