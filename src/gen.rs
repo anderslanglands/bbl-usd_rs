@@ -21,9 +21,10 @@ pub fn main() -> Result<()> {
 
     let mut binding_fns = Vec::new();
 
-    binding_fns.push(bind_vtvalue(&mut allow_list, &mut binding_includes));
-    binding_fns.push(bind_usd_property(&mut allow_list, &mut binding_includes));
-    binding_fns.push(bind_usd_prim(&mut allow_list, &mut binding_includes));
+    // binding_fns.push(bind_vtvalue(&mut allow_list, &mut binding_includes));
+    binding_fns.push(bind_sdf_path(&mut allow_list, &mut binding_includes));
+    // binding_fns.push(bind_usd_property(&mut allow_list, &mut binding_includes));
+    // binding_fns.push(bind_usd_prim(&mut allow_list, &mut binding_includes));
 
     let allow_list: Vec<String> = allow_list
         .iter()
@@ -55,6 +56,8 @@ pub fn main() -> Result<()> {
     let ns = ast.find_namespace(namespace_internal)?;
     ast.rename_namespace(ns, namespace_external);
 
+    println!("{ast:?}");
+
     // now call all the binding functions to manipulate the ast
     for fun in binding_fns {
         fun(&mut ast)?;
@@ -81,26 +84,28 @@ fn bind_usd_property(allow_list: &mut Vec<&str>, includes: &mut Vec<&str>) -> Bo
     allow_list.extend_from_slice(&[
         r"^pxr::UsdProperty$",
         r"^pxr::UsdProperty::UsdProperty\(.*\)$",
-        //r"^pxr::UsdProperty::GetPropertyStack\(.*\)$",        // SdfPropertySpecHandleVector
-        r"^pxr::UsdProperty::GetBaseName\(.*\)$",
-        r"^pxr::UsdProperty::GetNamespace\(.*\)$",
-        // r"^pxr::UsdProperty::SplitName\(.*\)$",                // std::vector
-        r"^pxr::UsdProperty::GetDisplayGroup\(.*\)$",
-        r"^pxr::UsdProperty::SetDisplayGroup\(.*\)$",
-        r"^pxr::UsdProperty::ClearDisplayGroup\(.*\)$",
-        r"^pxr::UsdProperty::HasAuthoredDisplayGroup\(.*\)$",
-        // r"^pxr::UsdProperty::GetNestedDisplayGroups\(.*\)$",   // std::vector
+        r"^pxr::SdfHandle<T>::operator->.*$",
+        r"^pxr::SdfPropertySpec.*Handle.*$",
+        r"^pxr::UsdProperty::GetPropertyStack\(.*\)$",        // SdfPropertySpecHandleVector
+        // r"^pxr::UsdProperty::GetBaseName\(.*\)$",
+        // r"^pxr::UsdProperty::GetNamespace\(.*\)$",
+        // r"^pxr::UsdProperty::SplitName\(.*\)$",                
+        // r"^pxr::UsdProperty::GetDisplayGroup\(.*\)$",
+        // r"^pxr::UsdProperty::SetDisplayGroup\(.*\)$",
+        // r"^pxr::UsdProperty::ClearDisplayGroup\(.*\)$",
+        // r"^pxr::UsdProperty::HasAuthoredDisplayGroup\(.*\)$",
+        // r"^pxr::UsdProperty::GetNestedDisplayGroups\(.*\)$",   
         // r"^pxr::UsdProperty::SetNestedDisplayGroups\(.*\)$",
-        r"^pxr::UsdProperty::GetDisplayName\(.*\)$",
-        r"^pxr::UsdProperty::SetDisplayName\(.*\)$",
-        r"^pxr::UsdProperty::ClearDisplayName\(.*\)$",
-        r"^pxr::UsdProperty::HasAuthoredDisplayName\(.*\)$",
-        r"^pxr::UsdProperty::IsCustom\(.*\)$",
-        r"^pxr::UsdProperty::SetCustom\(.*\)$",
-        r"^pxr::UsdProperty::IsDefined\(.*\)$",
-        r"^pxr::UsdProperty::IsAuthored\(.*\)$",
+        // r"^pxr::UsdProperty::GetDisplayName\(.*\)$",
+        // r"^pxr::UsdProperty::SetDisplayName\(.*\)$",
+        // r"^pxr::UsdProperty::ClearDisplayName\(.*\)$",
+        // r"^pxr::UsdProperty::HasAuthoredDisplayName\(.*\)$",
+        // r"^pxr::UsdProperty::IsCustom\(.*\)$",
+        // r"^pxr::UsdProperty::SetCustom\(.*\)$",
+        // r"^pxr::UsdProperty::IsDefined\(.*\)$",
+        // r"^pxr::UsdProperty::IsAuthored\(.*\)$",
         // r"^pxr::UsdProperty::IsAuthoredAt\(.*\)$",           // UsdEditTarget
-        r"^pxr::UsdProperty::FlattenTo\(.*\)$",
+        // r"^pxr::UsdProperty::FlattenTo\(.*\)$",
     ]);
 
     Box::new(|ast: &mut AST| {
@@ -109,17 +114,35 @@ fn bind_usd_property(allow_list: &mut Vec<&str>, includes: &mut Vec<&str>) -> Bo
 }
 
 
+fn bind_sdf_path(allow_list: &mut Vec<&str>, includes: &mut Vec<&str>) -> Box<dyn Fn(&mut AST) -> Result<()>> {
+    includes.push("#include <pxr/usd/sdf/path.h>");
+
+    allow_list.extend_from_slice(&[
+        r"^pxr::SdfAncestorsRange.*$",
+        r"^pxr::SdfPath$",
+        r"^pxr::SdfPath::.*$",
+    ]);
+
+    Box::new(|ast: &mut AST| {
+        Ok(())
+    })
+}
+
 fn bind_usd_prim(allow_list: &mut Vec<&str>, includes: &mut Vec<&str>) -> Box<dyn Fn(&mut AST) -> Result<()>> {
     includes.push("#include <pxr/usd/usd/property.h>");
+    includes.push("#include <pxr/usd/usd/prim.h>");
 
     allow_list.extend_from_slice(&[
         r"^pxr::UsdPrim$",
-        // r"^pxr::UsdPrimTypeInfo$",
+        r"^pxr::UsdPrimSiblingRange.*$",
+        r"^pxr::UsdPrimSubtreeRange.*$",
+        r"^pxr::UsdPrimTypeInfo$",
+        r"^pxr::UsdPrimTypeInfo::.*$",
         r"^pxr::UsdPrim::UsdPrim\(\)*$",
-        // r"^pxr::UsdPrim::GetPrimTypeInfo\(\)*$",     // can't bind this as UsdPrimTypeInfo is non-constructible
-        // r"^pxr::UsdPrim::GetPrimDefinition\(\)*$",   // can't bind this as UsdPrimDefinition is non-constructible
+        r"^pxr::UsdPrim::GetPrimTypeInfo\(\)*$",
+        r"^pxr::UsdPrim::GetPrimDefinition\(\)*$",
         r"^pxr::UsdPrim::GetSpecifier\(\)*$",
-        // r"^pxr::UsdPrim::GetPrimStack\(\)*$",        // handle invokes boost::totally_ordered for fun...
+        r"^pxr::UsdPrim::GetPrimStack\(\)*$",
         r"^pxr::UsdPrim::SetSpecifier\(.*\)*$",
         r"^pxr::UsdPrim::GetTypeName\(\)*$",
         r"^pxr::UsdPrim::SetTypeName\(.*\)*$",
@@ -131,15 +154,15 @@ fn bind_usd_prim(allow_list: &mut Vec<&str>, includes: &mut Vec<&str>) -> Box<dy
         r"^pxr::UsdPrim::IsAbstract\(\)*$",
         r"^pxr::UsdPrim::IsDefined\(\)*$",
         r"^pxr::UsdPrim::HasDefiningSpecifier\(\)*$",
-        // r"^pxr::UsdPrim::GetAppliedSchemas\(\)*$",                   // std::vector
-        // r"^pxr::UsdPrim::GetPropertyNames\(.*\)*$",                  // std::vector
-        // r"^pxr::UsdPrim::GetAuthoredPropertyNames\(.*\)*$",          // std::vector
-        // r"^pxr::UsdPrim::GetProperties\(.*\)*$",                     // std::vector
-        // r"^pxr::UsdPrim::GetAuthoredProperties\(.*\)*$",             // std::vector
-        // r"^pxr::UsdPrim::GetPropertiesInNamespace\(.*\)*$",          // std::vector
-        // r"^pxr::UsdPrim::GetAuthoredPropertiesInNamespace\(.*\)*$",  // std::vector
-        // r"^pxr::UsdPrim::GetPropertyOrder\(.*\)*$",                  // std::vector
-        // r"^pxr::UsdPrim::SetPropertyOrder\(.*\)*$",                  // std::vector
+        r"^pxr::UsdPrim::GetAppliedSchemas\(\)*$",                   
+        r"^pxr::UsdPrim::GetPropertyNames\(.*\)*$",                  
+        r"^pxr::UsdPrim::GetAuthoredPropertyNames\(.*\)*$",          
+        r"^pxr::UsdPrim::GetProperties\(.*\)*$",                     
+        r"^pxr::UsdPrim::GetAuthoredProperties\(.*\)*$",             
+        r"^pxr::UsdPrim::GetPropertiesInNamespace\(.*\)*$",          
+        r"^pxr::UsdPrim::GetAuthoredPropertiesInNamespace\(.*\)*$",  
+        r"^pxr::UsdPrim::GetPropertyOrder\(.*\)*$",                  
+        r"^pxr::UsdPrim::SetPropertyOrder\(.*\)*$",                  
         r"^pxr::UsdPrim::ClearPropertyOrder\(.*\)*$",
         r"^pxr::UsdPrim::RemoveProperty\(.*\)*$",
         r"^pxr::UsdPrim::GetProperty\(.*\)*$",
@@ -153,9 +176,21 @@ fn bind_usd_prim(allow_list: &mut Vec<&str>, includes: &mut Vec<&str>) -> Box<dy
         r"^pxr::UsdPrim::RemoveAppliedSchema\(.*\)*$",
         r"^pxr::UsdPrim::GetChild\(.*\)*$",
         /* All the rest of the Prim Children sectino relying on boost::iterator_adapter */
+        r"^pxr::UsdPrim::GetChildren\(.*\)*$",
+        r"^pxr::UsdPrim::GetAllChildren\(.*\)*$",
+        r"^pxr::UsdPrim::GetFilteredChildren\(.*\)*$",
+        r"^pxr::UsdPrim::GetChildrenNames\(.*\)*$",
+        r"^pxr::UsdPrim::GetAllChildrenNames\(.*\)*$",
+        r"^pxr::UsdPrim::GetFilteredChildrenNames\(.*\)*$",
+        r"^pxr::UsdPrim::GetDescendents\(.*\)*$",
+        r"^pxr::UsdPrim::GetAllDescendents\(.*\)*$",
+        r"^pxr::UsdPrim::GetFilteredDescendents\(.*\)*$",
+        r"^pxr::UsdPrim::GetChildrenReorder\(.*\)*$",
+        r"^pxr::UsdPrim::SetChildrenReorder\(.*\)*$",
+        r"^pxr::UsdPrim::ClearChildrenReorder\(.*\)*$",
         r"^pxr::UsdPrim::GetParent\(.*\)*$",
         r"^pxr::UsdPrim::GetNextSibling\(.*\)*$",
-        // r"^pxr::UsdPrim::GetFilteredNextSibling\(.*\)*$",          // PrimFlagsPredicate looks sketchy
+        r"^pxr::UsdPrim::GetFilteredNextSibling\(.*\)*$",
         r"^pxr::UsdPrim::IsPseudoRoot\(.*\)*$",
         // r"^pxr::UsdPrim::GetPrimAtPath\(.*\)*$",                   SdfPath 
         // r"^pxr::UsdPrim::GetObjectAtPath\(.*\)*$",
