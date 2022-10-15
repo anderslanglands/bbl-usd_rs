@@ -14,21 +14,29 @@ pub fn main() -> Result<()> {
     let namespace_internal = "pxrInternal_v0_22__pxrReserved__";
     let namespace_external = "pxr";
 
-    let mut allow_list = vec![
-        r"^pxr$",
-    ];
+    let mut allow_list = vec![r"^pxr$"];
+    let mut override_list = vec![];
     let mut binding_includes = vec![];
 
     let mut binding_fns = Vec::new();
 
-    // binding_fns.push(bind_vtvalue(&mut allow_list, &mut binding_includes));
+    binding_fns.push(bind_vtvalue(&mut allow_list, &mut binding_includes));
     binding_fns.push(bind_sdf_path(&mut allow_list, &mut binding_includes));
-    // binding_fns.push(bind_usd_property(&mut allow_list, &mut binding_includes));
-    // binding_fns.push(bind_usd_prim(&mut allow_list, &mut binding_includes));
+    binding_fns.push(bind_usd_property(&mut allow_list, &mut binding_includes));
+    binding_fns.push(bind_usd_prim(
+        &mut allow_list,
+        &mut binding_includes,
+        &mut override_list,
+    ));
 
     let allow_list: Vec<String> = allow_list
         .iter()
         .map(|s| s.replace(namespace_external, namespace_internal))
+        .collect();
+
+    let override_list: Vec<(String, Box<ClassExtractionFn>)> = override_list
+        .into_iter()
+        .map(|(s, c)| (s.replace(namespace_external, namespace_internal), c))
         .collect();
 
     let options = BindOptions {
@@ -43,6 +51,7 @@ pub fn main() -> Result<()> {
         // c++ it has to exract, the less likely it is to choke on constructs we haven't implemented yet)
         limit_to_namespace: Some(namespace_internal),
         allow_list: AllowList::new(allow_list),
+        overrides: OverrideList::new(override_list),
         // compile_definitions: &["-Wno-deprecated"],
         ..Default::default()
     };
@@ -78,23 +87,25 @@ pub fn main() -> Result<()> {
     Ok(())
 }
 
-fn bind_usd_property(allow_list: &mut Vec<&str>, includes: &mut Vec<&str>) -> Box<dyn Fn(&mut AST) -> Result<()>> {
+fn bind_usd_property(
+    allow_list: &mut Vec<&str>,
+    includes: &mut Vec<&str>,
+) -> Box<dyn Fn(&mut AST) -> Result<()>> {
     includes.push("#include <pxr/usd/usd/property.h>");
 
     allow_list.extend_from_slice(&[
         r"^pxr::UsdProperty$",
-        r"^pxr::UsdProperty::UsdProperty\(.*\)$",
-        r"^pxr::SdfHandle<T>::operator->.*$",
-        r"^pxr::SdfPropertySpec.*Handle.*$",
-        r"^pxr::UsdProperty::GetPropertyStack\(.*\)$",        // SdfPropertySpecHandleVector
+        r"^pxr::UsdProperty::.*$",
+        // r"^pxr::UsdProperty::UsdProperty\(.*\)$",
+        // r"^pxr::UsdProperty::GetPropertyStack\(.*\)$",
         // r"^pxr::UsdProperty::GetBaseName\(.*\)$",
         // r"^pxr::UsdProperty::GetNamespace\(.*\)$",
-        // r"^pxr::UsdProperty::SplitName\(.*\)$",                
+        // r"^pxr::UsdProperty::SplitName\(.*\)$",
         // r"^pxr::UsdProperty::GetDisplayGroup\(.*\)$",
         // r"^pxr::UsdProperty::SetDisplayGroup\(.*\)$",
         // r"^pxr::UsdProperty::ClearDisplayGroup\(.*\)$",
         // r"^pxr::UsdProperty::HasAuthoredDisplayGroup\(.*\)$",
-        // r"^pxr::UsdProperty::GetNestedDisplayGroups\(.*\)$",   
+        // r"^pxr::UsdProperty::GetNestedDisplayGroups\(.*\)$",
         // r"^pxr::UsdProperty::SetNestedDisplayGroups\(.*\)$",
         // r"^pxr::UsdProperty::GetDisplayName\(.*\)$",
         // r"^pxr::UsdProperty::SetDisplayName\(.*\)$",
@@ -106,15 +117,17 @@ fn bind_usd_property(allow_list: &mut Vec<&str>, includes: &mut Vec<&str>) -> Bo
         // r"^pxr::UsdProperty::IsAuthored\(.*\)$",
         // r"^pxr::UsdProperty::IsAuthoredAt\(.*\)$",           // UsdEditTarget
         // r"^pxr::UsdProperty::FlattenTo\(.*\)$",
+        r"^pxr::SdfHandle<T>::operator->.*$",
+        r"^pxr::SdfPropertySpec.*Handle.*$",
     ]);
 
-    Box::new(|ast: &mut AST| {
-        Ok(())
-    })
+    Box::new(|ast: &mut AST| Ok(()))
 }
 
-
-fn bind_sdf_path(allow_list: &mut Vec<&str>, includes: &mut Vec<&str>) -> Box<dyn Fn(&mut AST) -> Result<()>> {
+fn bind_sdf_path(
+    allow_list: &mut Vec<&str>,
+    includes: &mut Vec<&str>,
+) -> Box<dyn Fn(&mut AST) -> Result<()>> {
     includes.push("#include <pxr/usd/sdf/path.h>");
 
     allow_list.extend_from_slice(&[
@@ -123,91 +136,49 @@ fn bind_sdf_path(allow_list: &mut Vec<&str>, includes: &mut Vec<&str>) -> Box<dy
         r"^pxr::SdfPath::.*$",
     ]);
 
-    Box::new(|ast: &mut AST| {
-        Ok(())
-    })
+    Box::new(|ast: &mut AST| Ok(()))
 }
 
-fn bind_usd_prim(allow_list: &mut Vec<&str>, includes: &mut Vec<&str>) -> Box<dyn Fn(&mut AST) -> Result<()>> {
+fn bind_usd_prim(
+    allow_list: &mut Vec<&str>,
+    includes: &mut Vec<&str>,
+    overrides: &mut Vec<(&str, Box<ClassExtractionFn>)>,
+) -> Box<dyn Fn(&mut AST) -> Result<()>> {
     includes.push("#include <pxr/usd/usd/property.h>");
     includes.push("#include <pxr/usd/usd/prim.h>");
+    includes.push("#include <pxr/usd/usd/attribute.h>");
+    includes.push("#include <pxr/usd/usd/relationship.h>");
+    includes.push("#include <pxr/usd/usd/variantSets.h>");
+    includes.push("#include <pxr/usd/usd/inherits.h>");
+    includes.push("#include <pxr/usd/usd/specializes.h>");
+    includes.push("#include <pxr/usd/usd/references.h>");
+    includes.push("#include <pxr/usd/usd/payloads.h>");
 
     allow_list.extend_from_slice(&[
-        r"^pxr::UsdPrim$",
         r"^pxr::UsdPrimSiblingRange.*$",
         r"^pxr::UsdPrimSubtreeRange.*$",
         r"^pxr::UsdPrimTypeInfo$",
         r"^pxr::UsdPrimTypeInfo::.*$",
-        r"^pxr::UsdPrim::UsdPrim\(\)*$",
-        r"^pxr::UsdPrim::GetPrimTypeInfo\(\)*$",
-        r"^pxr::UsdPrim::GetPrimDefinition\(\)*$",
-        r"^pxr::UsdPrim::GetSpecifier\(\)*$",
-        r"^pxr::UsdPrim::GetPrimStack\(\)*$",
-        r"^pxr::UsdPrim::SetSpecifier\(.*\)*$",
-        r"^pxr::UsdPrim::GetTypeName\(\)*$",
-        r"^pxr::UsdPrim::SetTypeName\(.*\)*$",
-        r"^pxr::UsdPrim::ClearActive\(\)*$",
-        r"^pxr::UsdPrim::HasAuthoredActive\(\)*$",
-        r"^pxr::UsdPrim::IsLoaded\(\)*$",
-        r"^pxr::UsdPrim::IsModel\(\)*$",
-        r"^pxr::UsdPrim::IsGroup\(\)*$",
-        r"^pxr::UsdPrim::IsAbstract\(\)*$",
-        r"^pxr::UsdPrim::IsDefined\(\)*$",
-        r"^pxr::UsdPrim::HasDefiningSpecifier\(\)*$",
-        r"^pxr::UsdPrim::GetAppliedSchemas\(\)*$",                   
-        r"^pxr::UsdPrim::GetPropertyNames\(.*\)*$",                  
-        r"^pxr::UsdPrim::GetAuthoredPropertyNames\(.*\)*$",          
-        r"^pxr::UsdPrim::GetProperties\(.*\)*$",                     
-        r"^pxr::UsdPrim::GetAuthoredProperties\(.*\)*$",             
-        r"^pxr::UsdPrim::GetPropertiesInNamespace\(.*\)*$",          
-        r"^pxr::UsdPrim::GetAuthoredPropertiesInNamespace\(.*\)*$",  
-        r"^pxr::UsdPrim::GetPropertyOrder\(.*\)*$",                  
-        r"^pxr::UsdPrim::SetPropertyOrder\(.*\)*$",                  
-        r"^pxr::UsdPrim::ClearPropertyOrder\(.*\)*$",
-        r"^pxr::UsdPrim::RemoveProperty\(.*\)*$",
-        r"^pxr::UsdPrim::GetProperty\(.*\)*$",
-        r"^pxr::UsdPrim::HasProperty\(.*\)*$",
-        r"^pxr::UsdPrim::IsA\(const .*\)*$",
-        r"^pxr::UsdPrim::HasAPI\(const TfType &, const TfToken &\)*$",
-        r"^pxr::UsdPrim::CanApplyAPI\(const TfType &,.*\)*$",
-        r"^pxr::UsdPrim::ApplyAPI\(const TfType &,.*\)*$",
-        r"^pxr::UsdPrim::RemoveAPI\(const TfType &,.*\)*$",
-        r"^pxr::UsdPrim::AddAppliedSchema\(.*\)*$",
-        r"^pxr::UsdPrim::RemoveAppliedSchema\(.*\)*$",
-        r"^pxr::UsdPrim::GetChild\(.*\)*$",
-        /* All the rest of the Prim Children sectino relying on boost::iterator_adapter */
-        r"^pxr::UsdPrim::GetChildren\(.*\)*$",
-        r"^pxr::UsdPrim::GetAllChildren\(.*\)*$",
-        r"^pxr::UsdPrim::GetFilteredChildren\(.*\)*$",
-        r"^pxr::UsdPrim::GetChildrenNames\(.*\)*$",
-        r"^pxr::UsdPrim::GetAllChildrenNames\(.*\)*$",
-        r"^pxr::UsdPrim::GetFilteredChildrenNames\(.*\)*$",
-        r"^pxr::UsdPrim::GetDescendents\(.*\)*$",
-        r"^pxr::UsdPrim::GetAllDescendents\(.*\)*$",
-        r"^pxr::UsdPrim::GetFilteredDescendents\(.*\)*$",
-        r"^pxr::UsdPrim::GetChildrenReorder\(.*\)*$",
-        r"^pxr::UsdPrim::SetChildrenReorder\(.*\)*$",
-        r"^pxr::UsdPrim::ClearChildrenReorder\(.*\)*$",
-        r"^pxr::UsdPrim::GetParent\(.*\)*$",
-        r"^pxr::UsdPrim::GetNextSibling\(.*\)*$",
-        r"^pxr::UsdPrim::GetFilteredNextSibling\(.*\)*$",
-        r"^pxr::UsdPrim::IsPseudoRoot\(.*\)*$",
-        // r"^pxr::UsdPrim::GetPrimAtPath\(.*\)*$",                   SdfPath 
-        // r"^pxr::UsdPrim::GetObjectAtPath\(.*\)*$",
-        // r"^pxr::UsdPrim::GetPropertyAtPath\(.*\)*$",
-        // r"^pxr::UsdPrim::GetAttributeAtPath\(.*\)*$",
-        // r"^pxr::UsdPrim::GetRelationshipAtPath\(.*\)*$",
-        // r"^pxr::UsdPrim::GetVariantSets\(.*\)*$",                // UsdVariantSet
-        // r"^pxr::UsdPrim::GetVariantSet\(.*\)*$",
-        // r"^pxr::UsdPrim::HasVariantSets\(.*\)*$",                  
+        r"^pxr::UsdPrim$",
+        r"^pxr::UsdPrim::.*$",
     ]);
 
-    Box::new(|ast: &mut AST| {
-        Ok(())
-    })
+    overrides.push((
+        r"^pxr::TfWeakPtr<.*>$",
+        Box::new(
+            |cursor, ast, tu, already_visited, allow_list, override_list| {
+                create_tfweakptr(cursor, ast, already_visited, tu, allow_list, override_list)
+            },
+        ),
+    ));
+
+    Box::new(|ast: &mut AST| Ok(()))
 }
 
-fn bind_vtvalue(allow_list: &mut Vec<&str>, includes: &mut Vec<&str>) -> Box<dyn Fn(&mut AST) -> Result<()>> {
+fn bind_vtvalue(
+    allow_list: &mut Vec<&str>,
+    includes: &mut Vec<&str>,
+) -> Box<dyn Fn(&mut AST) -> Result<()>> {
     includes.push("#include <pxr/base/vt/value.h>");
 
     allow_list.extend_from_slice(&[
@@ -286,4 +257,138 @@ pub fn specialize_methods(
     }
 
     Ok(())
+}
+pub fn create_tfweakptr(
+    c: Cursor,
+    ast: &mut AST,
+    already_visited: &mut Vec<USR>,
+    tu: &TranslationUnit,
+    allow_list: &AllowList,
+    class_overrides: &OverrideList,
+) -> Result<USR, ExtractError> {
+    if already_visited.contains(&c.usr()) {
+        return Ok(c.usr());
+    } else {
+        already_visited.push(c.usr());
+    }
+
+    println!("Got TfWeakPtr {c:?}");
+
+    let c_tmpl = c.specialized_template().unwrap();
+    let usr_tmpl = create_tfweakptr_tmpl(c_tmpl, ast, tu, already_visited)?;
+
+    let name = c.display_name();
+
+    let namespaces = get_namespaces_for_decl(c, tu, ast, already_visited)?;
+    let ty = c.template_argument_type(0)?;
+    let template_arguments = vec![TemplateArgument::Type(extract_type(
+        ty,
+        &[],
+        already_visited,
+        ast,
+        tu,
+        allow_list,
+        class_overrides,
+    )?)];
+
+    let cts =
+        ClassTemplateSpecialization::new(usr_tmpl, c.usr(), &name, template_arguments, namespaces);
+
+    let id = ast.insert_class_template_specialization(cts);
+    let cd = ast.get_class_mut(usr_tmpl).unwrap();
+    cd.add_specialization(id);
+
+    Ok(c.usr())
+}
+
+fn create_tfweakptr_tmpl(
+    c_tmpl: Cursor,
+    ast: &mut AST,
+    tu: &TranslationUnit,
+    already_visited: &mut Vec<USR>,
+) -> Result<USR, ExtractError> {
+    if already_visited.contains(&c_tmpl.usr()) {
+        return Ok(c_tmpl.usr());
+    } else {
+        already_visited.push(c_tmpl.usr());
+    }
+
+    // get the namespaces for std::vector<> as we might not have found them already
+    let namespaces = get_namespaces_for_decl(c_tmpl, tu, ast, already_visited)?;
+
+    let u_std = ast
+        .find_namespace("std")
+        .map(|id| ast.namespaces()[id].usr())
+        .unwrap();
+
+    let method_namespaces = vec![u_std, c_tmpl.usr()];
+
+    let methods = vec![
+        Method::new(
+            USR::new("BBL:tfweakptr_ctor_default"),
+            "TfWeakPtr".to_string(),
+            MethodKind::Constructor,
+            QualType::void(),
+            Vec::new(),
+            Some("ctor".to_string()),
+            method_namespaces.clone(),
+            Vec::new(),
+            ExceptionSpecificationKind::None,
+            Const(false),
+            Static(false),
+            Virtual(false),
+            PureVirtual(false),
+            Deleted(false),
+        ),
+        Method::new(
+            USR::new("BBL:tfweakptr_operator->_const"),
+            "operator->".to_string(),
+            MethodKind::Method,
+            QualType::pointer("const T *", QualType::template_parameter("T", "T", true)),
+            vec![],
+            Some("get".to_string()),
+            method_namespaces.clone(),
+            Vec::new(),
+            ExceptionSpecificationKind::None,
+            Const(true),
+            Static(false),
+            Virtual(false),
+            PureVirtual(false),
+            Deleted(false),
+        ),
+        Method::new(
+            USR::new("BBL:tfweakptr_operator->_mut"),
+            "operator->".to_string(),
+            MethodKind::Method,
+            QualType::pointer("T *", QualType::template_parameter("T", "T", false)),
+            vec![],
+            Some("get_mut".to_string()),
+            method_namespaces,
+            Vec::new(),
+            ExceptionSpecificationKind::None,
+            Const(false),
+            Static(false),
+            Virtual(false),
+            PureVirtual(false),
+            Deleted(false),
+        ),
+    ];
+
+    let cd = ClassDecl::new(
+        c_tmpl.usr(),
+        "TfWeakPtr".to_string(),
+        Vec::new(),
+        methods,
+        vec![u_std],
+        vec![TemplateParameterDecl::typ("T", 0)],
+        false,
+        NeedsImplicit {
+            dtor: true,
+            ..Default::default()
+        },
+    );
+
+    ast.insert_class(cd);
+
+    Ok(c_tmpl.usr())
 }
