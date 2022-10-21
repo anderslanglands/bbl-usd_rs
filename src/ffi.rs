@@ -3,7 +3,31 @@
 #![allow(non_upper_case_globals)]
 #![allow(unused_imports)]
 
-pub use internal::pxr_UsdPrim_PropertyPredicateFunc as pxr_UsdPrim_PropertyPredicateFunc;
+pub use internal::size_t as size_t;
+pub use internal::pxrInternal_v0_22_pxrReserved_SdfPathVector as pxr_SdfPathVector;
+pub use internal::pxrInternal_v0_22_pxrReserved_TfTokenVector as pxr_TfTokenVector;
+pub use internal::pxrInternal_v0_22_pxrReserved_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_Handle as pxr_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_Handle;
+pub use internal::pxrInternal_v0_22_pxrReserved_SdfPropertySpecHandle as pxr_SdfPropertySpecHandle;
+pub use internal::pxrInternal_v0_22_pxrReserved_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_ConstHandle as pxr_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_ConstHandle;
+pub use internal::pxrInternal_v0_22_pxrReserved_SdfPropertySpecConstHandle as pxr_SdfPropertySpecConstHandle;
+pub use internal::pxrInternal_v0_22_pxrReserved_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_Vector as pxr_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_Vector;
+pub use internal::pxrInternal_v0_22_pxrReserved_SdfPropertySpecHandleVector as pxr_SdfPropertySpecHandleVector;
+pub use internal::pxrInternal_v0_22_pxrReserved_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_ConstVector as pxr_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_ConstVector;
+pub use internal::pxrInternal_v0_22_pxrReserved_SdfPropertySpecConstHandleVector as pxr_SdfPropertySpecConstHandleVector;
+pub use internal::pxrInternal_v0_22_pxrReserved_UsdPrimSiblingRange as pxr_UsdPrimSiblingRange;
+pub use internal::pxrInternal_v0_22_pxrReserved_UsdPrimSubtreeRange as pxr_UsdPrimSubtreeRange;
+pub use internal::pxrInternal_v0_22_pxrReserved_TfDeclarePtrs_pxrInternal_v0_22_pxrReserved_UsdStage_Ptr as pxr_TfDeclarePtrs_pxrInternal_v0_22_pxrReserved_UsdStage_Ptr;
+pub use internal::pxrInternal_v0_22_pxrReserved_UsdStagePtr as pxr_UsdStagePtr;
+pub use internal::pxrInternal_v0_22_pxrReserved_UsdStageWeakPtr as pxr_UsdStageWeakPtr;
+pub use internal::pxrInternal_v0_22_pxrReserved_UsdMetadataValueMap as pxr_UsdMetadataValueMap;
+pub use internal::pxrInternal_v0_22_pxrReserved_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_Vector as pxr_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_Vector;
+pub use internal::pxrInternal_v0_22_pxrReserved_SdfPrimSpecHandleVector as pxr_SdfPrimSpecHandleVector;
+pub use internal::pxrInternal_v0_22_pxrReserved_UsdPrim_PropertyPredicateFunc as pxr_UsdPrim_PropertyPredicateFunc;
+pub use internal::pxrInternal_v0_22_pxrReserved_UsdPrim_SiblingRange as pxr_UsdPrim_SiblingRange;
+pub use internal::pxrInternal_v0_22_pxrReserved_UsdPrim_SubtreeRange as pxr_UsdPrim_SubtreeRange;
+pub use internal::pxrInternal_v0_22_pxrReserved_SdfHandleTo_SdfLayer_Handle as pxr_SdfHandleTo_SdfLayer_Handle;
+pub use internal::pxrInternal_v0_22_pxrReserved_SdfLayerHandle as pxr_SdfLayerHandle;
+
 pub use internal::pxrInternal_v0_22__pxrReserved___SdfSpecifier as pxr_SdfSpecifier;
 pub use internal::pxrInternal_v0_22__pxrReserved___SdfVariability as pxr_SdfVariability;
 pub use internal::pxrInternal_v0_22__pxrReserved___UsdLoadPolicy as pxr_UsdLoadPolicy;
@@ -986,7 +1010,8 @@ mod internal {
 
 use std::os::raw::*;
 
-pub type pxr_UsdPrim_PropertyPredicateFunc = extern fn(*const pxr_TfToken) -> c_bool;
+pub type size_t = c_ulong;pub type pxrInternal_v0_22_pxrReserved_SdfPathVector = std_vector_pxrInternal_v0_22_pxrReserved_SdfPath_;pub type pxrInternal_v0_22_pxrReserved_TfTokenVector = std_vector_pxrInternal_v0_22_pxrReserved_TfToken_;pub type pxrInternal_v0_22_pxrReserved_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_Handle = pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_;pub type pxrInternal_v0_22_pxrReserved_SdfPropertySpecHandle = pxrInternal_v0_22_pxrReserved_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_Handle;pub type pxrInternal_v0_22_pxrReserved_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_ConstHandle = pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_;pub type pxrInternal_v0_22_pxrReserved_SdfPropertySpecConstHandle = pxrInternal_v0_22_pxrReserved_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_ConstHandle;pub type pxrInternal_v0_22_pxrReserved_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_Vector = std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_;pub type pxrInternal_v0_22_pxrReserved_SdfPropertySpecHandleVector = pxrInternal_v0_22_pxrReserved_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_Vector;pub type pxrInternal_v0_22_pxrReserved_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_ConstVector = std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_;pub type pxrInternal_v0_22_pxrReserved_SdfPropertySpecConstHandleVector = pxrInternal_v0_22_pxrReserved_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_ConstVector;pub type pxrInternal_v0_22_pxrReserved_UsdPrimSiblingRange = boost_iterator_range_pxrInternal_v0_22_pxrReserved_UsdPrimSiblingIterator_;pub type pxrInternal_v0_22_pxrReserved_UsdPrimSubtreeRange = boost_iterator_range_pxrInternal_v0_22_pxrReserved_UsdPrimSubtreeIterator_;pub type pxrInternal_v0_22_pxrReserved_TfDeclarePtrs_pxrInternal_v0_22_pxrReserved_UsdStage_Ptr = pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage_;pub type pxrInternal_v0_22_pxrReserved_UsdStagePtr = pxrInternal_v0_22_pxrReserved_TfDeclarePtrs_pxrInternal_v0_22_pxrReserved_UsdStage_Ptr;pub type pxrInternal_v0_22_pxrReserved_UsdStageWeakPtr = pxrInternal_v0_22_pxrReserved_UsdStagePtr;pub type pxrInternal_v0_22_pxrReserved_UsdMetadataValueMap = std_map_pxrInternal_v0_22_pxrReserved_TfToken_pxrInternal_v0_22_pxrReserved_VtValue_pxrInternal_v0_22_pxrReserved_TfDictionaryLessThan_;pub type pxrInternal_v0_22_pxrReserved_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_Vector = std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_;pub type pxrInternal_v0_22_pxrReserved_SdfPrimSpecHandleVector = pxrInternal_v0_22_pxrReserved_SdfHandleTo_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_Vector;pub type pxrInternal_v0_22_pxrReserved_UsdPrim_PropertyPredicateFunc = extern fn(*const pxrInternal_v0_22_pxrReserved_TfToken) -> bool;
+pub type pxrInternal_v0_22_pxrReserved_UsdPrim_SiblingRange = pxrInternal_v0_22_pxrReserved_UsdPrimSiblingRange;pub type pxrInternal_v0_22_pxrReserved_UsdPrim_SubtreeRange = pxrInternal_v0_22_pxrReserved_UsdPrimSubtreeRange;pub type pxrInternal_v0_22_pxrReserved_SdfHandleTo_SdfLayer_Handle = pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer_;pub type pxrInternal_v0_22_pxrReserved_SdfLayerHandle = pxrInternal_v0_22_pxrReserved_SdfHandleTo_SdfLayer_Handle;
 #[derive(Debug, Copy, Clone)]
 pub enum pxrInternal_v0_22__pxrReserved___SdfSpecifier {
     SdfSpecifierDef = 0,
@@ -1313,7 +1338,7 @@ pub struct std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim_ {
 
 extern "C" {
 
-pub fn _std_type_info_op_eq(this_: *const _std_type_info, result: *mut c_bool, __arg: *const _std_type_info);
+pub fn _std_type_info_op_eq(this_: *const _std_type_info, result: *mut bool, __arg: *const _std_type_info);
 
 pub fn std_string_ctor(result: *mut *mut std_string);
 
@@ -1327,727 +1352,727 @@ pub fn std_string_move_ctor(result: *mut *mut std_string, other: *mut std_string
 
 pub fn std_string_c_str(this_: *const std_string, result: *mut *const c_char);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_ctor(result: *mut *mut pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_ctor(result: *mut *mut pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_copy_ctor(result: *mut *mut pxr_VtValue, other: *const pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_copy_ctor(result: *mut *mut pxrInternal_v0_22_pxrReserved_VtValue, other: *const pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_move_ctor(result: *mut *mut pxr_VtValue, other: *mut pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_move_ctor(result: *mut *mut pxrInternal_v0_22_pxrReserved_VtValue, other: *mut pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_dtor(this_: *mut pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_dtor(this_: *mut pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_IsArrayValued(this_: *const pxr_VtValue, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_IsArrayValued(this_: *const pxrInternal_v0_22_pxrReserved_VtValue, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_GetArraySize(this_: *const pxr_VtValue, result: *mut size_t);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_GetArraySize(this_: *const pxrInternal_v0_22_pxrReserved_VtValue, result: *mut size_t);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_GetTypeid(this_: *const pxr_VtValue, result: *mut *const _std_type_info);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_GetTypeid(this_: *const pxrInternal_v0_22_pxrReserved_VtValue, result: *mut *const _std_type_info);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_GetElementTypeid(this_: *const pxr_VtValue, result: *mut *const _std_type_info);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_GetElementTypeid(this_: *const pxrInternal_v0_22_pxrReserved_VtValue, result: *mut *const _std_type_info);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_GetTypeName(this_: *const pxr_VtValue, result: *mut std_string);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_GetTypeName(this_: *const pxrInternal_v0_22_pxrReserved_VtValue, result: *mut std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_CastToTypeOf(result: *mut pxr_VtValue, val: *const pxr_VtValue, other: *const pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_CastToTypeOf(result: *mut pxrInternal_v0_22_pxrReserved_VtValue, val: *const pxrInternal_v0_22_pxrReserved_VtValue, other: *const pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_CastToTypeOf_1(this_: *mut pxr_VtValue, result: *mut *mut pxr_VtValue, other: *const pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_CastToTypeOf_1(this_: *mut pxrInternal_v0_22_pxrReserved_VtValue, result: *mut *mut pxrInternal_v0_22_pxrReserved_VtValue, other: *const pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_CanCastToTypeid(this_: *const pxr_VtValue, result: *mut c_bool, type_: *const _std_type_info);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_CanCastToTypeid(this_: *const pxrInternal_v0_22_pxrReserved_VtValue, result: *mut bool, type_: *const _std_type_info);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_IsEmpty(this_: *const pxr_VtValue, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_IsEmpty(this_: *const pxrInternal_v0_22_pxrReserved_VtValue, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_CanHash(this_: *const pxr_VtValue, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_CanHash(this_: *const pxrInternal_v0_22_pxrReserved_VtValue, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_GetHash(this_: *const pxr_VtValue, result: *mut size_t);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_GetHash(this_: *const pxrInternal_v0_22_pxrReserved_VtValue, result: *mut size_t);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_op_eq(this_: *const pxr_VtValue, result: *mut c_bool, rhs: *const pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_op_eq(this_: *const pxrInternal_v0_22_pxrReserved_VtValue, result: *mut bool, rhs: *const pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_VtValue_float(result: *mut *mut pxr_VtValue, obj: *const c_float);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_VtValue_float(result: *mut *mut pxrInternal_v0_22_pxrReserved_VtValue, obj: *const c_float);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_IsHolding_float(this_: *const pxr_VtValue, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_IsHolding_float(this_: *const pxrInternal_v0_22_pxrReserved_VtValue, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_Remove_float(this_: *mut pxr_VtValue, result: *mut c_float);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_Remove_float(this_: *mut pxrInternal_v0_22_pxrReserved_VtValue, result: *mut c_float);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_Get_float(this_: *const pxr_VtValue, result: *mut *const c_float);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_Get_float(this_: *const pxrInternal_v0_22_pxrReserved_VtValue, result: *mut *const c_float);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_GetWithDefault_float(this_: *const pxr_VtValue, result: *mut c_float, def: *const c_float);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_GetWithDefault_float(this_: *const pxrInternal_v0_22_pxrReserved_VtValue, result: *mut c_float, def: *const c_float);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_Cast_float(result: *mut pxr_VtValue, val: *const pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_Cast_float(result: *mut pxrInternal_v0_22_pxrReserved_VtValue, val: *const pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_VtValue_Cast_float_1(this_: *mut pxr_VtValue, result: *mut *mut pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_VtValue_Cast_float_1(this_: *mut pxrInternal_v0_22_pxrReserved_VtValue, result: *mut *mut pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPathAncestorsRange_dtor(this_: *mut pxr_SdfPathAncestorsRange);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPathAncestorsRange_dtor(this_: *mut pxrInternal_v0_22_pxrReserved_SdfPathAncestorsRange);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_EmptyPath(result: *mut *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_EmptyPath(result: *mut *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AbsoluteRootPath(result: *mut *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AbsoluteRootPath(result: *mut *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ReflexiveRelativePath(result: *mut *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ReflexiveRelativePath(result: *mut *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ctor(result: *mut *mut pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ctor(result: *mut *mut pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ctor_1(result: *mut *mut pxr_SdfPath, path: *const std_string);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ctor_1(result: *mut *mut pxrInternal_v0_22_pxrReserved_SdfPath, path: *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetPathElementCount(this_: *const pxr_SdfPath, result: *mut size_t);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetPathElementCount(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut size_t);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsAbsolutePath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsAbsolutePath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsAbsoluteRootPath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsAbsoluteRootPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsPrimPath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsPrimPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsAbsoluteRootOrPrimPath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsAbsoluteRootOrPrimPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsRootPrimPath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsRootPrimPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsPropertyPath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsPropertyPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsPrimPropertyPath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsPrimPropertyPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsNamespacedPropertyPath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsNamespacedPropertyPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsPrimVariantSelectionPath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsPrimVariantSelectionPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsPrimOrPrimVariantSelectionPath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsPrimOrPrimVariantSelectionPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ContainsPrimVariantSelection(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ContainsPrimVariantSelection(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ContainsPropertyElements(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ContainsPropertyElements(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ContainsTargetPath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ContainsTargetPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsRelationalAttributePath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsRelationalAttributePath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsTargetPath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsTargetPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsMapperPath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsMapperPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsMapperArgPath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsMapperArgPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsExpressionPath(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsExpressionPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsEmpty(this_: *const pxr_SdfPath, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsEmpty(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetAsToken(this_: *const pxr_SdfPath, result: *mut pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetAsToken(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetToken(this_: *const pxr_SdfPath, result: *mut *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetToken(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetAsString(this_: *const pxr_SdfPath, result: *mut std_string);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetAsString(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetString(this_: *const pxr_SdfPath, result: *mut *const std_string);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetString(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetText(this_: *const pxr_SdfPath, result: *mut *const c_char);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetText(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut *const c_char);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetPrefixes(this_: *const pxr_SdfPath, result: *mut pxr_SdfPathVector);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetPrefixes(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPathVector);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetPrefixes_1(this_: *const pxr_SdfPath, prefixes: *mut pxr_SdfPathVector);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetPrefixes_1(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, prefixes: *mut pxrInternal_v0_22_pxrReserved_SdfPathVector);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetAncestorsRange(this_: *const pxr_SdfPath, result: *mut pxr_SdfPathAncestorsRange);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetAncestorsRange(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPathAncestorsRange);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetName(this_: *const pxr_SdfPath, result: *mut *const std_string);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetName(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetNameToken(this_: *const pxr_SdfPath, result: *mut *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetNameToken(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetElementString(this_: *const pxr_SdfPath, result: *mut std_string);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetElementString(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetElementToken(this_: *const pxr_SdfPath, result: *mut pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetElementToken(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ReplaceName(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, newName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ReplaceName(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, newName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetTargetPath(this_: *const pxr_SdfPath, result: *mut *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetTargetPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetAllTargetPathsRecursively(this_: *const pxr_SdfPath, result: *mut pxr_SdfPathVector);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetAllTargetPathsRecursively(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPathVector);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetVariantSelection(this_: *const pxr_SdfPath, result: *mut std_pair_std_basic_string_char_std_basic_string_char_);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetVariantSelection(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut std_pair_std_basic_string_char_std_basic_string_char_);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_HasPrefix(this_: *const pxr_SdfPath, result: *mut c_bool, prefix: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_HasPrefix(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool, prefix: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetParentPath(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetParentPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetPrimPath(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetPrimPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetPrimOrPrimVariantSelectionPath(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetPrimOrPrimVariantSelectionPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetAbsoluteRootOrPrimPath(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetAbsoluteRootOrPrimPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_StripAllVariantSelections(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_StripAllVariantSelections(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendPath(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, newSuffix: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, newSuffix: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendChild(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, childName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendChild(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, childName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendProperty(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, propName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendProperty(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, propName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendVariantSelection(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, variantSet: *const std_string, variant: *const std_string);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendVariantSelection(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, variantSet: *const std_string, variant: *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendTarget(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, targetPath: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendTarget(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, targetPath: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendRelationalAttribute(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, attrName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendRelationalAttribute(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, attrName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ReplaceTargetPath(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, newTargetPath: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ReplaceTargetPath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, newTargetPath: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendMapper(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, targetPath: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendMapper(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, targetPath: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendMapperArg(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, argName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendMapperArg(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, argName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendExpression(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendExpression(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendElementString(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, element: *const std_string);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendElementString(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, element: *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendElementToken(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, elementTok: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_AppendElementToken(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, elementTok: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ReplacePrefix(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, oldPrefix: *const pxr_SdfPath, newPrefix: *const pxr_SdfPath, fixTargetPaths: c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_ReplacePrefix(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, oldPrefix: *const pxrInternal_v0_22_pxrReserved_SdfPath, newPrefix: *const pxrInternal_v0_22_pxrReserved_SdfPath, fixTargetPaths: bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetCommonPrefix(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, path: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetCommonPrefix(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, path: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_RemoveCommonSuffix(this_: *const pxr_SdfPath, result: *mut std_pair_pxrInternal_v0_22_pxrReserved_SdfPath_pxrInternal_v0_22_pxrReserved_SdfPath_, otherPath: *const pxr_SdfPath, stopAtRootPrim: c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_RemoveCommonSuffix(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut std_pair_pxrInternal_v0_22_pxrReserved_SdfPath_pxrInternal_v0_22_pxrReserved_SdfPath_, otherPath: *const pxrInternal_v0_22_pxrReserved_SdfPath, stopAtRootPrim: bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_MakeAbsolutePath(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, anchor: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_MakeAbsolutePath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, anchor: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_MakeRelativePath(this_: *const pxr_SdfPath, result: *mut pxr_SdfPath, anchor: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_MakeRelativePath(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath, anchor: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsValidIdentifier(result: *mut c_bool, name: *const std_string);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsValidIdentifier(result: *mut bool, name: *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsValidNamespacedIdentifier(result: *mut c_bool, name: *const std_string);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsValidNamespacedIdentifier(result: *mut bool, name: *const std_string);
 
 pub fn pxrInternal_v0_22_pxrReserved_SdfPath_TokenizeIdentifier(result: *mut std_vector_std_basic_string_char_, name: *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_TokenizeIdentifierAsTokens(result: *mut pxr_TfTokenVector, name: *const std_string);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_TokenizeIdentifierAsTokens(result: *mut pxrInternal_v0_22_pxrReserved_TfTokenVector, name: *const std_string);
 
 pub fn pxrInternal_v0_22_pxrReserved_SdfPath_JoinIdentifier(result: *mut std_string, names: *const std_vector_std_basic_string_char_);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_JoinIdentifier_1(result: *mut std_string, names: *const pxr_TfTokenVector);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_JoinIdentifier_1(result: *mut std_string, names: *const pxrInternal_v0_22_pxrReserved_TfTokenVector);
 
 pub fn pxrInternal_v0_22_pxrReserved_SdfPath_JoinIdentifier_2(result: *mut std_string, lhs: *const std_string, rhs: *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_JoinIdentifier_3(result: *mut std_string, lhs: *const pxr_TfToken, rhs: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_JoinIdentifier_3(result: *mut std_string, lhs: *const pxrInternal_v0_22_pxrReserved_TfToken, rhs: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
 pub fn pxrInternal_v0_22_pxrReserved_SdfPath_StripNamespace(result: *mut std_string, name: *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_StripNamespace_1(result: *mut pxr_TfToken, name: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_StripNamespace_1(result: *mut pxrInternal_v0_22_pxrReserved_TfToken, name: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
 pub fn pxrInternal_v0_22_pxrReserved_SdfPath_StripPrefixNamespace(result: *mut std_pair_std_basic_string_char_bool_, name: *const std_string, matchNamespace: *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsValidPathString(result: *mut c_bool, pathString: *const std_string, errMsg: *mut std_string);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_IsValidPathString(result: *mut bool, pathString: *const std_string, errMsg: *mut std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_op_eq(this_: *const pxr_SdfPath, result: *mut c_bool, rhs: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_op_eq(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool, rhs: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_operator_(this_: *const pxr_SdfPath, result: *mut c_bool, rhs: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_operator_(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut bool, rhs: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetHash(this_: *const pxr_SdfPath, result: *mut size_t);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetHash(this_: *const pxrInternal_v0_22_pxrReserved_SdfPath, result: *mut size_t);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetConciseRelativePaths(result: *mut pxr_SdfPathVector, paths: *const pxr_SdfPathVector);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_GetConciseRelativePaths(result: *mut pxrInternal_v0_22_pxrReserved_SdfPathVector, paths: *const pxrInternal_v0_22_pxrReserved_SdfPathVector);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_RemoveDescendentPaths(paths: *mut pxr_SdfPathVector);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_RemoveDescendentPaths(paths: *mut pxrInternal_v0_22_pxrReserved_SdfPathVector);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfPath_RemoveAncestorPaths(paths: *mut pxr_SdfPathVector);
+pub fn pxrInternal_v0_22_pxrReserved_SdfPath_RemoveAncestorPaths(paths: *mut pxrInternal_v0_22_pxrReserved_SdfPathVector);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_GetTypeName(this_: *const pxr_UsdPrimTypeInfo, result: *mut *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_GetTypeName(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo, result: *mut *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_GetAppliedAPISchemas(this_: *const pxr_UsdPrimTypeInfo, result: *mut *const pxr_TfTokenVector);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_GetAppliedAPISchemas(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo, result: *mut *const pxrInternal_v0_22_pxrReserved_TfTokenVector);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_GetSchemaType(this_: *const pxr_UsdPrimTypeInfo, result: *mut *const pxr_TfType);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_GetSchemaType(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo, result: *mut *const pxrInternal_v0_22_pxrReserved_TfType);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_GetSchemaTypeName(this_: *const pxr_UsdPrimTypeInfo, result: *mut *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_GetSchemaTypeName(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo, result: *mut *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_GetPrimDefinition(this_: *const pxr_UsdPrimTypeInfo, result: *mut *const pxr_UsdPrimDefinition);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_GetPrimDefinition(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo, result: *mut *const pxrInternal_v0_22_pxrReserved_UsdPrimDefinition);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_op_eq(this_: *const pxr_UsdPrimTypeInfo, result: *mut c_bool, other: *const pxr_UsdPrimTypeInfo);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_op_eq(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo, result: *mut bool, other: *const pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_op_not(this_: *const pxr_UsdPrimTypeInfo, result: *mut c_bool, other: *const pxr_UsdPrimTypeInfo);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_op_not(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo, result: *mut bool, other: *const pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_GetEmptyPrimType(result: *mut *const pxr_UsdPrimTypeInfo);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo_GetEmptyPrimType(result: *mut *const pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ctor(result: *mut *mut pxr_UsdProperty);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ctor(result: *mut *mut pxrInternal_v0_22_pxrReserved_UsdProperty);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetPropertyStack(this_: *const pxr_UsdProperty, result: *mut pxr_SdfPropertySpecHandleVector, time: *mut pxr_UsdTimeCode);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetPropertyStack(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut pxrInternal_v0_22_pxrReserved_SdfPropertySpecHandleVector, time: *mut pxrInternal_v0_22_pxrReserved_UsdTimeCode);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetBaseName(this_: *const pxr_UsdProperty, result: *mut pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetBaseName(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetNamespace(this_: *const pxr_UsdProperty, result: *mut pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetNamespace(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SplitName(this_: *const pxr_UsdProperty, result: *mut std_vector_std_basic_string_char_);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SplitName(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut std_vector_std_basic_string_char_);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetDisplayGroup(this_: *const pxr_UsdProperty, result: *mut std_string);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetDisplayGroup(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetDisplayGroup(this_: *const pxr_UsdProperty, result: *mut c_bool, displayGroup: *const std_string);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetDisplayGroup(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, displayGroup: *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearDisplayGroup(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearDisplayGroup(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredDisplayGroup(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredDisplayGroup(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetNestedDisplayGroups(this_: *const pxr_UsdProperty, result: *mut std_vector_std_basic_string_char_);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetNestedDisplayGroups(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut std_vector_std_basic_string_char_);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetNestedDisplayGroups(this_: *const pxr_UsdProperty, result: *mut c_bool, nestedGroups: *const std_vector_std_basic_string_char_);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetNestedDisplayGroups(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, nestedGroups: *const std_vector_std_basic_string_char_);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetDisplayName(this_: *const pxr_UsdProperty, result: *mut std_string);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetDisplayName(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetDisplayName(this_: *const pxr_UsdProperty, result: *mut c_bool, name: *const std_string);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetDisplayName(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, name: *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearDisplayName(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearDisplayName(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredDisplayName(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredDisplayName(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_IsCustom(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_IsCustom(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetCustom(this_: *const pxr_UsdProperty, result: *mut c_bool, isCustom: c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetCustom(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, isCustom: bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_IsDefined(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_IsDefined(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_IsAuthored(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_IsAuthored(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_IsAuthoredAt(this_: *const pxr_UsdProperty, result: *mut c_bool, editTarget: *const pxr_UsdEditTarget);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_IsAuthoredAt(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, editTarget: *const pxrInternal_v0_22_pxrReserved_UsdEditTarget);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_FlattenTo(this_: *const pxr_UsdProperty, result: *mut pxr_UsdProperty, parent: *const pxr_UsdPrim);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_FlattenTo(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut pxrInternal_v0_22_pxrReserved_UsdProperty, parent: *const pxrInternal_v0_22_pxrReserved_UsdPrim);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_FlattenTo_1(this_: *const pxr_UsdProperty, result: *mut pxr_UsdProperty, parent: *const pxr_UsdPrim, propName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_FlattenTo_1(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut pxrInternal_v0_22_pxrReserved_UsdProperty, parent: *const pxrInternal_v0_22_pxrReserved_UsdPrim, propName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_FlattenTo_2(this_: *const pxr_UsdProperty, result: *mut pxr_UsdProperty, property: *const pxr_UsdProperty);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_FlattenTo_2(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut pxrInternal_v0_22_pxrReserved_UsdProperty, property: *const pxrInternal_v0_22_pxrReserved_UsdProperty);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_IsValid(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_IsValid(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetStage(this_: *const pxr_UsdProperty, result: *mut pxr_UsdStageWeakPtr);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetStage(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut pxrInternal_v0_22_pxrReserved_UsdStageWeakPtr);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetPath(this_: *const pxr_UsdProperty, result: *mut pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetPath(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetPrimPath(this_: *const pxr_UsdProperty, result: *mut *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetPrimPath(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetPrim(this_: *const pxr_UsdProperty, result: *mut pxr_UsdPrim);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetPrim(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut pxrInternal_v0_22_pxrReserved_UsdPrim);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetName(this_: *const pxr_UsdProperty, result: *mut *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetName(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetDescription(this_: *const pxr_UsdProperty, result: *mut std_string);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetDescription(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetMetadata(this_: *const pxr_UsdProperty, result: *mut c_bool, key: *const pxr_TfToken, value: *mut pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetMetadata(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken, value: *mut pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetMetadata(this_: *const pxr_UsdProperty, result: *mut c_bool, key: *const pxr_TfToken, value: *const pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetMetadata(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken, value: *const pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearMetadata(this_: *const pxr_UsdProperty, result: *mut c_bool, key: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearMetadata(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasMetadata(this_: *const pxr_UsdProperty, result: *mut c_bool, key: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasMetadata(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredMetadata(this_: *const pxr_UsdProperty, result: *mut c_bool, key: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredMetadata(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetMetadataByDictKey(this_: *const pxr_UsdProperty, result: *mut c_bool, key: *const pxr_TfToken, keyPath: *const pxr_TfToken, value: *mut pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetMetadataByDictKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken, value: *mut pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetMetadataByDictKey(this_: *const pxr_UsdProperty, result: *mut c_bool, key: *const pxr_TfToken, keyPath: *const pxr_TfToken, value: *const pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetMetadataByDictKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken, value: *const pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearMetadataByDictKey(this_: *const pxr_UsdProperty, result: *mut c_bool, key: *const pxr_TfToken, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearMetadataByDictKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasMetadataDictKey(this_: *const pxr_UsdProperty, result: *mut c_bool, key: *const pxr_TfToken, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasMetadataDictKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredMetadataDictKey(this_: *const pxr_UsdProperty, result: *mut c_bool, key: *const pxr_TfToken, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredMetadataDictKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetAllMetadata(this_: *const pxr_UsdProperty, result: *mut pxr_UsdMetadataValueMap);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetAllMetadata(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut pxrInternal_v0_22_pxrReserved_UsdMetadataValueMap);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetAllAuthoredMetadata(this_: *const pxr_UsdProperty, result: *mut pxr_UsdMetadataValueMap);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetAllAuthoredMetadata(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut pxrInternal_v0_22_pxrReserved_UsdMetadataValueMap);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_IsHidden(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_IsHidden(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetHidden(this_: *const pxr_UsdProperty, result: *mut c_bool, hidden: c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetHidden(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, hidden: bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearHidden(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearHidden(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredHidden(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredHidden(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetCustomData(this_: *const pxr_UsdProperty, result: *mut pxr_VtDictionary);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetCustomData(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut pxrInternal_v0_22_pxrReserved_VtDictionary);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetCustomDataByKey(this_: *const pxr_UsdProperty, result: *mut pxr_VtValue, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetCustomDataByKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut pxrInternal_v0_22_pxrReserved_VtValue, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetCustomData(this_: *const pxr_UsdProperty, customData: *const pxr_VtDictionary);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetCustomData(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, customData: *const pxrInternal_v0_22_pxrReserved_VtDictionary);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetCustomDataByKey(this_: *const pxr_UsdProperty, keyPath: *const pxr_TfToken, value: *const pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetCustomDataByKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken, value: *const pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearCustomData(this_: *const pxr_UsdProperty);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearCustomData(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearCustomDataByKey(this_: *const pxr_UsdProperty, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearCustomDataByKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasCustomData(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasCustomData(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasCustomDataKey(this_: *const pxr_UsdProperty, result: *mut c_bool, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasCustomDataKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredCustomData(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredCustomData(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredCustomDataKey(this_: *const pxr_UsdProperty, result: *mut c_bool, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredCustomDataKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetAssetInfo(this_: *const pxr_UsdProperty, result: *mut pxr_VtDictionary);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetAssetInfo(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut pxrInternal_v0_22_pxrReserved_VtDictionary);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetAssetInfoByKey(this_: *const pxr_UsdProperty, result: *mut pxr_VtValue, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetAssetInfoByKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut pxrInternal_v0_22_pxrReserved_VtValue, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetAssetInfo(this_: *const pxr_UsdProperty, customData: *const pxr_VtDictionary);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetAssetInfo(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, customData: *const pxrInternal_v0_22_pxrReserved_VtDictionary);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetAssetInfoByKey(this_: *const pxr_UsdProperty, keyPath: *const pxr_TfToken, value: *const pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetAssetInfoByKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken, value: *const pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearAssetInfo(this_: *const pxr_UsdProperty);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearAssetInfo(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearAssetInfoByKey(this_: *const pxr_UsdProperty, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearAssetInfoByKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAssetInfo(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAssetInfo(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAssetInfoKey(this_: *const pxr_UsdProperty, result: *mut c_bool, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAssetInfoKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredAssetInfo(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredAssetInfo(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredAssetInfoKey(this_: *const pxr_UsdProperty, result: *mut c_bool, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredAssetInfoKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetDocumentation(this_: *const pxr_UsdProperty, result: *mut std_string);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetDocumentation(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetDocumentation(this_: *const pxr_UsdProperty, result: *mut c_bool, doc: *const std_string);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_SetDocumentation(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool, doc: *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearDocumentation(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ClearDocumentation(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredDocumentation(this_: *const pxr_UsdProperty, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_HasAuthoredDocumentation(this_: *const pxrInternal_v0_22_pxrReserved_UsdProperty, result: *mut bool);
 
 pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_GetNamespaceDelimiter(result: *mut c_char);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ctor_1(result: *mut *mut pxr_UsdProperty);
+pub fn pxrInternal_v0_22_pxrReserved_UsdProperty_ctor_1(result: *mut *mut pxrInternal_v0_22_pxrReserved_UsdProperty);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdAttribute_dtor(this_: *mut pxr_UsdAttribute);
+pub fn pxrInternal_v0_22_pxrReserved_UsdAttribute_dtor(this_: *mut pxrInternal_v0_22_pxrReserved_UsdAttribute);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdRelationship_dtor(this_: *mut pxr_UsdRelationship);
+pub fn pxrInternal_v0_22_pxrReserved_UsdRelationship_dtor(this_: *mut pxrInternal_v0_22_pxrReserved_UsdRelationship);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdVariantSets_dtor(this_: *mut pxr_UsdVariantSets);
+pub fn pxrInternal_v0_22_pxrReserved_UsdVariantSets_dtor(this_: *mut pxrInternal_v0_22_pxrReserved_UsdVariantSets);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfValueTypeName_dtor(this_: *mut pxr_SdfValueTypeName);
+pub fn pxrInternal_v0_22_pxrReserved_SdfValueTypeName_dtor(this_: *mut pxrInternal_v0_22_pxrReserved_SdfValueTypeName);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPayloads_dtor(this_: *mut pxr_UsdPayloads);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPayloads_dtor(this_: *mut pxrInternal_v0_22_pxrReserved_UsdPayloads);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdReferences_dtor(this_: *mut pxr_UsdReferences);
+pub fn pxrInternal_v0_22_pxrReserved_UsdReferences_dtor(this_: *mut pxrInternal_v0_22_pxrReserved_UsdReferences);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdInherits_dtor(this_: *mut pxr_UsdInherits);
+pub fn pxrInternal_v0_22_pxrReserved_UsdInherits_dtor(this_: *mut pxrInternal_v0_22_pxrReserved_UsdInherits);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdSpecializes_dtor(this_: *mut pxr_UsdSpecializes);
+pub fn pxrInternal_v0_22_pxrReserved_UsdSpecializes_dtor(this_: *mut pxrInternal_v0_22_pxrReserved_UsdSpecializes);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ctor(result: *mut *mut pxr_UsdPrim);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ctor(result: *mut *mut pxrInternal_v0_22_pxrReserved_UsdPrim);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrimTypeInfo(this_: *const pxr_UsdPrim, result: *mut *const pxr_UsdPrimTypeInfo);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrimTypeInfo(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut *const pxrInternal_v0_22_pxrReserved_UsdPrimTypeInfo);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrimDefinition(this_: *const pxr_UsdPrim, result: *mut *const pxr_UsdPrimDefinition);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrimDefinition(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut *const pxrInternal_v0_22_pxrReserved_UsdPrimDefinition);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetSpecifier(this_: *const pxr_UsdPrim, result: *mut pxrInternal_v0_22__pxrReserved___SdfSpecifier);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetSpecifier(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22__pxrReserved___SdfSpecifier);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrimStack(this_: *const pxr_UsdPrim, result: *mut pxr_SdfPrimSpecHandleVector);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrimStack(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_SdfPrimSpecHandleVector);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetSpecifier(this_: *const pxr_UsdPrim, result: *mut c_bool, specifier: pxrInternal_v0_22__pxrReserved___SdfSpecifier);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetSpecifier(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, specifier: pxrInternal_v0_22__pxrReserved___SdfSpecifier);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetTypeName(this_: *const pxr_UsdPrim, result: *mut *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetTypeName(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetTypeName(this_: *const pxr_UsdPrim, result: *mut c_bool, typeName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetTypeName(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, typeName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearTypeName(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearTypeName(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredTypeName(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredTypeName(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsActive(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsActive(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetActive(this_: *const pxr_UsdPrim, result: *mut c_bool, active: c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetActive(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, active: bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearActive(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearActive(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredActive(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredActive(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsLoaded(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsLoaded(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsModel(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsModel(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsGroup(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsGroup(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsAbstract(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsAbstract(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsDefined(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsDefined(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasDefiningSpecifier(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasDefiningSpecifier(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAppliedSchemas(this_: *const pxr_UsdPrim, result: *mut pxr_TfTokenVector);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAppliedSchemas(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_TfTokenVector);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPropertyNames(this_: *const pxr_UsdPrim, result: *mut pxr_TfTokenVector, predicate: pxr_UsdPrim_PropertyPredicateFunc);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPropertyNames(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_TfTokenVector, predicate: pxrInternal_v0_22_pxrReserved_UsdPrim_PropertyPredicateFunc);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAuthoredPropertyNames(this_: *const pxr_UsdPrim, result: *mut pxr_TfTokenVector, predicate: pxr_UsdPrim_PropertyPredicateFunc);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAuthoredPropertyNames(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_TfTokenVector, predicate: pxrInternal_v0_22_pxrReserved_UsdPrim_PropertyPredicateFunc);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetProperties(this_: *const pxr_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, predicate: pxr_UsdPrim_PropertyPredicateFunc);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetProperties(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, predicate: pxrInternal_v0_22_pxrReserved_UsdPrim_PropertyPredicateFunc);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAuthoredProperties(this_: *const pxr_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, predicate: pxr_UsdPrim_PropertyPredicateFunc);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAuthoredProperties(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, predicate: pxrInternal_v0_22_pxrReserved_UsdPrim_PropertyPredicateFunc);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPropertiesInNamespace(this_: *const pxr_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, namespaces: *const std_vector_std_basic_string_char_);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPropertiesInNamespace(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, namespaces: *const std_vector_std_basic_string_char_);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPropertiesInNamespace_1(this_: *const pxr_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, namespaces: *const std_string);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPropertiesInNamespace_1(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, namespaces: *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAuthoredPropertiesInNamespace(this_: *const pxr_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, namespaces: *const std_vector_std_basic_string_char_);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAuthoredPropertiesInNamespace(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, namespaces: *const std_vector_std_basic_string_char_);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAuthoredPropertiesInNamespace_1(this_: *const pxr_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, namespaces: *const std_string);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAuthoredPropertiesInNamespace_1(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, namespaces: *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPropertyOrder(this_: *const pxr_UsdPrim, result: *mut pxr_TfTokenVector);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPropertyOrder(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_TfTokenVector);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetPropertyOrder(this_: *const pxr_UsdPrim, order: *const pxr_TfTokenVector);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetPropertyOrder(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, order: *const pxrInternal_v0_22_pxrReserved_TfTokenVector);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearPropertyOrder(this_: *const pxr_UsdPrim);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearPropertyOrder(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_RemoveProperty(this_: *mut pxr_UsdPrim, result: *mut c_bool, propName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_RemoveProperty(this_: *mut pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, propName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetProperty(this_: *const pxr_UsdPrim, result: *mut pxr_UsdProperty, propName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetProperty(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdProperty, propName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasProperty(this_: *const pxr_UsdPrim, result: *mut c_bool, propName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasProperty(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, propName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsA(this_: *const pxr_UsdPrim, result: *mut c_bool, schemaType: *const pxr_TfType);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsA(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, schemaType: *const pxrInternal_v0_22_pxrReserved_TfType);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAPI(this_: *const pxr_UsdPrim, result: *mut c_bool, schemaType: *const pxr_TfType, instanceName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAPI(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, schemaType: *const pxrInternal_v0_22_pxrReserved_TfType, instanceName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CanApplyAPI(this_: *const pxr_UsdPrim, result: *mut c_bool, schemaType: *const pxr_TfType, whyNot: *mut std_string);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CanApplyAPI(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, schemaType: *const pxrInternal_v0_22_pxrReserved_TfType, whyNot: *mut std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CanApplyAPI_1(this_: *const pxr_UsdPrim, result: *mut c_bool, schemaType: *const pxr_TfType, instanceName: *const pxr_TfToken, whyNot: *mut std_string);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CanApplyAPI_1(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, schemaType: *const pxrInternal_v0_22_pxrReserved_TfType, instanceName: *const pxrInternal_v0_22_pxrReserved_TfToken, whyNot: *mut std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ApplyAPI(this_: *const pxr_UsdPrim, result: *mut c_bool, schemaType: *const pxr_TfType);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ApplyAPI(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, schemaType: *const pxrInternal_v0_22_pxrReserved_TfType);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ApplyAPI_1(this_: *const pxr_UsdPrim, result: *mut c_bool, schemaType: *const pxr_TfType, instanceName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ApplyAPI_1(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, schemaType: *const pxrInternal_v0_22_pxrReserved_TfType, instanceName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_RemoveAPI(this_: *const pxr_UsdPrim, result: *mut c_bool, schemaType: *const pxr_TfType);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_RemoveAPI(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, schemaType: *const pxrInternal_v0_22_pxrReserved_TfType);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_RemoveAPI_1(this_: *const pxr_UsdPrim, result: *mut c_bool, schemaType: *const pxr_TfType, instanceName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_RemoveAPI_1(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, schemaType: *const pxrInternal_v0_22_pxrReserved_TfType, instanceName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_AddAppliedSchema(this_: *const pxr_UsdPrim, result: *mut c_bool, appliedSchemaName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_AddAppliedSchema(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, appliedSchemaName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_RemoveAppliedSchema(this_: *const pxr_UsdPrim, result: *mut c_bool, appliedSchemaName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_RemoveAppliedSchema(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, appliedSchemaName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetChild(this_: *const pxr_UsdPrim, result: *mut pxr_UsdPrim, name: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetChild(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdPrim, name: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetChildren(this_: *const pxr_UsdPrim, result: *mut pxr_UsdPrim_SiblingRange);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetChildren(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdPrim_SiblingRange);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAllChildren(this_: *const pxr_UsdPrim, result: *mut pxr_UsdPrim_SiblingRange);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAllChildren(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdPrim_SiblingRange);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetFilteredChildren(this_: *const pxr_UsdPrim, result: *mut pxr_UsdPrim_SiblingRange, predicate: *const pxr_Usd_PrimFlagsPredicate);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetFilteredChildren(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdPrim_SiblingRange, predicate: *const pxrInternal_v0_22_pxrReserved_Usd_PrimFlagsPredicate);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetChildrenNames(this_: *const pxr_UsdPrim, result: *mut pxr_TfTokenVector);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetChildrenNames(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_TfTokenVector);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAllChildrenNames(this_: *const pxr_UsdPrim, result: *mut pxr_TfTokenVector);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAllChildrenNames(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_TfTokenVector);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetFilteredChildrenNames(this_: *const pxr_UsdPrim, result: *mut pxr_TfTokenVector, predicate: *const pxr_Usd_PrimFlagsPredicate);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetFilteredChildrenNames(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_TfTokenVector, predicate: *const pxrInternal_v0_22_pxrReserved_Usd_PrimFlagsPredicate);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetDescendants(this_: *const pxr_UsdPrim, result: *mut pxr_UsdPrim_SubtreeRange);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetDescendants(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdPrim_SubtreeRange);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAllDescendants(this_: *const pxr_UsdPrim, result: *mut pxr_UsdPrim_SubtreeRange);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAllDescendants(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdPrim_SubtreeRange);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetFilteredDescendants(this_: *const pxr_UsdPrim, result: *mut pxr_UsdPrim_SubtreeRange, predicate: *const pxr_Usd_PrimFlagsPredicate);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetFilteredDescendants(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdPrim_SubtreeRange, predicate: *const pxrInternal_v0_22_pxrReserved_Usd_PrimFlagsPredicate);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetChildrenReorder(this_: *const pxr_UsdPrim, result: *mut pxr_TfTokenVector);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetChildrenReorder(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_TfTokenVector);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetChildrenReorder(this_: *const pxr_UsdPrim, order: *const pxr_TfTokenVector);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetChildrenReorder(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, order: *const pxrInternal_v0_22_pxrReserved_TfTokenVector);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearChildrenReorder(this_: *const pxr_UsdPrim);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearChildrenReorder(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetParent(this_: *const pxr_UsdPrim, result: *mut pxr_UsdPrim);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetParent(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdPrim);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetNextSibling(this_: *const pxr_UsdPrim, result: *mut pxr_UsdPrim);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetNextSibling(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdPrim);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetFilteredNextSibling(this_: *const pxr_UsdPrim, result: *mut pxr_UsdPrim, predicate: *const pxr_Usd_PrimFlagsPredicate);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetFilteredNextSibling(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdPrim, predicate: *const pxrInternal_v0_22_pxrReserved_Usd_PrimFlagsPredicate);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsPseudoRoot(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsPseudoRoot(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrimAtPath(this_: *const pxr_UsdPrim, result: *mut pxr_UsdPrim, path: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrimAtPath(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdPrim, path: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetObjectAtPath(this_: *const pxr_UsdPrim, result: *mut pxr_UsdObject, path: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetObjectAtPath(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdObject, path: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPropertyAtPath(this_: *const pxr_UsdPrim, result: *mut pxr_UsdProperty, path: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPropertyAtPath(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdProperty, path: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAttributeAtPath(this_: *const pxr_UsdPrim, result: *mut pxr_UsdAttribute, path: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAttributeAtPath(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdAttribute, path: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetRelationshipAtPath(this_: *const pxr_UsdPrim, result: *mut pxr_UsdRelationship, path: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetRelationshipAtPath(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdRelationship, path: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetVariantSets(this_: *const pxr_UsdPrim, result: *mut pxr_UsdVariantSets);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetVariantSets(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdVariantSets);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetVariantSet(this_: *const pxr_UsdPrim, result: *mut pxr_UsdVariantSet, variantSetName: *const std_string);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetVariantSet(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdVariantSet, variantSetName: *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasVariantSets(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasVariantSets(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CreateAttribute(this_: *const pxr_UsdPrim, result: *mut pxr_UsdAttribute, name: *const pxr_TfToken, typeName: *const pxr_SdfValueTypeName, custom: c_bool, variability: pxrInternal_v0_22__pxrReserved___SdfVariability);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CreateAttribute(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdAttribute, name: *const pxrInternal_v0_22_pxrReserved_TfToken, typeName: *const pxrInternal_v0_22_pxrReserved_SdfValueTypeName, custom: bool, variability: pxrInternal_v0_22__pxrReserved___SdfVariability);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CreateAttribute_1(this_: *const pxr_UsdPrim, result: *mut pxr_UsdAttribute, name: *const pxr_TfToken, typeName: *const pxr_SdfValueTypeName, variability: pxrInternal_v0_22__pxrReserved___SdfVariability);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CreateAttribute_1(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdAttribute, name: *const pxrInternal_v0_22_pxrReserved_TfToken, typeName: *const pxrInternal_v0_22_pxrReserved_SdfValueTypeName, variability: pxrInternal_v0_22__pxrReserved___SdfVariability);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CreateAttribute_2(this_: *const pxr_UsdPrim, result: *mut pxr_UsdAttribute, nameElts: *const std_vector_std_basic_string_char_, typeName: *const pxr_SdfValueTypeName, custom: c_bool, variability: pxrInternal_v0_22__pxrReserved___SdfVariability);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CreateAttribute_2(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdAttribute, nameElts: *const std_vector_std_basic_string_char_, typeName: *const pxrInternal_v0_22_pxrReserved_SdfValueTypeName, custom: bool, variability: pxrInternal_v0_22__pxrReserved___SdfVariability);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CreateAttribute_3(this_: *const pxr_UsdPrim, result: *mut pxr_UsdAttribute, nameElts: *const std_vector_std_basic_string_char_, typeName: *const pxr_SdfValueTypeName, variability: pxrInternal_v0_22__pxrReserved___SdfVariability);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CreateAttribute_3(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdAttribute, nameElts: *const std_vector_std_basic_string_char_, typeName: *const pxrInternal_v0_22_pxrReserved_SdfValueTypeName, variability: pxrInternal_v0_22__pxrReserved___SdfVariability);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAttributes(this_: *const pxr_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute_);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAttributes(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute_);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAuthoredAttributes(this_: *const pxr_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute_);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAuthoredAttributes(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute_);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAttribute(this_: *const pxr_UsdPrim, result: *mut pxr_UsdAttribute, attrName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAttribute(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdAttribute, attrName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAttribute(this_: *const pxr_UsdPrim, result: *mut c_bool, attrName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAttribute(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, attrName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CreateRelationship(this_: *const pxr_UsdPrim, result: *mut pxr_UsdRelationship, relName: *const pxr_TfToken, custom: c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CreateRelationship(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdRelationship, relName: *const pxrInternal_v0_22_pxrReserved_TfToken, custom: bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CreateRelationship_1(this_: *const pxr_UsdPrim, result: *mut pxr_UsdRelationship, nameElts: *const std_vector_std_basic_string_char_, custom: c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_CreateRelationship_1(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdRelationship, nameElts: *const std_vector_std_basic_string_char_, custom: bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetRelationships(this_: *const pxr_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship_);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetRelationships(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship_);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAuthoredRelationships(this_: *const pxr_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship_);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAuthoredRelationships(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship_);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetRelationship(this_: *const pxr_UsdPrim, result: *mut pxr_UsdRelationship, relName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetRelationship(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdRelationship, relName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasRelationship(this_: *const pxr_UsdPrim, result: *mut c_bool, relName: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasRelationship(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, relName: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearPayload(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearPayload(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasPayload(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasPayload(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetPayload(this_: *const pxr_UsdPrim, result: *mut c_bool, payload: *const pxr_SdfPayload);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetPayload(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, payload: *const pxrInternal_v0_22_pxrReserved_SdfPayload);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetPayload_1(this_: *const pxr_UsdPrim, result: *mut c_bool, assetPath: *const std_string, primPath: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetPayload_1(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, assetPath: *const std_string, primPath: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetPayload_2(this_: *const pxr_UsdPrim, result: *mut c_bool, layer: *const pxr_SdfLayerHandle, primPath: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetPayload_2(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, layer: *const pxrInternal_v0_22_pxrReserved_SdfLayerHandle, primPath: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPayloads(this_: *const pxr_UsdPrim, result: *mut pxr_UsdPayloads);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPayloads(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdPayloads);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredPayloads(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredPayloads(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_Load(this_: *const pxr_UsdPrim, policy: pxrInternal_v0_22__pxrReserved___UsdLoadPolicy);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_Load(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, policy: pxrInternal_v0_22__pxrReserved___UsdLoadPolicy);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_Unload(this_: *const pxr_UsdPrim);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_Unload(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetReferences(this_: *const pxr_UsdPrim, result: *mut pxr_UsdReferences);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetReferences(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdReferences);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredReferences(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredReferences(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetInherits(this_: *const pxr_UsdPrim, result: *mut pxr_UsdInherits);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetInherits(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdInherits);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredInherits(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredInherits(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetSpecializes(this_: *const pxr_UsdPrim, result: *mut pxr_UsdSpecializes);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetSpecializes(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdSpecializes);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredSpecializes(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredSpecializes(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsInstanceable(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsInstanceable(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetInstanceable(this_: *const pxr_UsdPrim, result: *mut c_bool, instanceable: c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetInstanceable(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, instanceable: bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearInstanceable(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearInstanceable(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredInstanceable(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredInstanceable(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsInstance(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsInstance(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsInstanceProxy(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsInstanceProxy(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsPrototypePath(result: *mut c_bool, path: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsPrototypePath(result: *mut bool, path: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsPathInPrototype(result: *mut c_bool, path: *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsPathInPrototype(result: *mut bool, path: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsPrototype(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsPrototype(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsInPrototype(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsInPrototype(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrototype(this_: *const pxr_UsdPrim, result: *mut pxr_UsdPrim);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrototype(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdPrim);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrimInPrototype(this_: *const pxr_UsdPrim, result: *mut pxr_UsdPrim);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrimInPrototype(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdPrim);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetInstances(this_: *const pxr_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim_);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetInstances(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim_);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrimIndex(this_: *const pxr_UsdPrim, result: *mut *const pxr_PcpPrimIndex);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrimIndex(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut *const pxrInternal_v0_22_pxrReserved_PcpPrimIndex);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ComputeExpandedPrimIndex(this_: *const pxr_UsdPrim, result: *mut pxr_PcpPrimIndex);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ComputeExpandedPrimIndex(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_PcpPrimIndex);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsValid(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsValid(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetStage(this_: *const pxr_UsdPrim, result: *mut pxr_UsdStageWeakPtr);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetStage(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdStageWeakPtr);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPath(this_: *const pxr_UsdPrim, result: *mut pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPath(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrimPath(this_: *const pxr_UsdPrim, result: *mut *const pxr_SdfPath);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrimPath(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrim(this_: *const pxr_UsdPrim, result: *mut pxr_UsdPrim);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetPrim(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdPrim);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetName(this_: *const pxr_UsdPrim, result: *mut *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetName(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetDescription(this_: *const pxr_UsdPrim, result: *mut std_string);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetDescription(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetMetadata(this_: *const pxr_UsdPrim, result: *mut c_bool, key: *const pxr_TfToken, value: *mut pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetMetadata(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken, value: *mut pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetMetadata(this_: *const pxr_UsdPrim, result: *mut c_bool, key: *const pxr_TfToken, value: *const pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetMetadata(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken, value: *const pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearMetadata(this_: *const pxr_UsdPrim, result: *mut c_bool, key: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearMetadata(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasMetadata(this_: *const pxr_UsdPrim, result: *mut c_bool, key: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasMetadata(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredMetadata(this_: *const pxr_UsdPrim, result: *mut c_bool, key: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredMetadata(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetMetadataByDictKey(this_: *const pxr_UsdPrim, result: *mut c_bool, key: *const pxr_TfToken, keyPath: *const pxr_TfToken, value: *mut pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetMetadataByDictKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken, value: *mut pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetMetadataByDictKey(this_: *const pxr_UsdPrim, result: *mut c_bool, key: *const pxr_TfToken, keyPath: *const pxr_TfToken, value: *const pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetMetadataByDictKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken, value: *const pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearMetadataByDictKey(this_: *const pxr_UsdPrim, result: *mut c_bool, key: *const pxr_TfToken, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearMetadataByDictKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasMetadataDictKey(this_: *const pxr_UsdPrim, result: *mut c_bool, key: *const pxr_TfToken, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasMetadataDictKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredMetadataDictKey(this_: *const pxr_UsdPrim, result: *mut c_bool, key: *const pxr_TfToken, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredMetadataDictKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, key: *const pxrInternal_v0_22_pxrReserved_TfToken, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAllMetadata(this_: *const pxr_UsdPrim, result: *mut pxr_UsdMetadataValueMap);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAllMetadata(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdMetadataValueMap);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAllAuthoredMetadata(this_: *const pxr_UsdPrim, result: *mut pxr_UsdMetadataValueMap);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAllAuthoredMetadata(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_UsdMetadataValueMap);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsHidden(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_IsHidden(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetHidden(this_: *const pxr_UsdPrim, result: *mut c_bool, hidden: c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetHidden(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, hidden: bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearHidden(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearHidden(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredHidden(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredHidden(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetCustomData(this_: *const pxr_UsdPrim, result: *mut pxr_VtDictionary);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetCustomData(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_VtDictionary);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetCustomDataByKey(this_: *const pxr_UsdPrim, result: *mut pxr_VtValue, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetCustomDataByKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_VtValue, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetCustomData(this_: *const pxr_UsdPrim, customData: *const pxr_VtDictionary);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetCustomData(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, customData: *const pxrInternal_v0_22_pxrReserved_VtDictionary);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetCustomDataByKey(this_: *const pxr_UsdPrim, keyPath: *const pxr_TfToken, value: *const pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetCustomDataByKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken, value: *const pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearCustomData(this_: *const pxr_UsdPrim);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearCustomData(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearCustomDataByKey(this_: *const pxr_UsdPrim, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearCustomDataByKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasCustomData(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasCustomData(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasCustomDataKey(this_: *const pxr_UsdPrim, result: *mut c_bool, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasCustomDataKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredCustomData(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredCustomData(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredCustomDataKey(this_: *const pxr_UsdPrim, result: *mut c_bool, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredCustomDataKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAssetInfo(this_: *const pxr_UsdPrim, result: *mut pxr_VtDictionary);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAssetInfo(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_VtDictionary);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAssetInfoByKey(this_: *const pxr_UsdPrim, result: *mut pxr_VtValue, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetAssetInfoByKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut pxrInternal_v0_22_pxrReserved_VtValue, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetAssetInfo(this_: *const pxr_UsdPrim, customData: *const pxr_VtDictionary);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetAssetInfo(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, customData: *const pxrInternal_v0_22_pxrReserved_VtDictionary);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetAssetInfoByKey(this_: *const pxr_UsdPrim, keyPath: *const pxr_TfToken, value: *const pxr_VtValue);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetAssetInfoByKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken, value: *const pxrInternal_v0_22_pxrReserved_VtValue);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearAssetInfo(this_: *const pxr_UsdPrim);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearAssetInfo(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearAssetInfoByKey(this_: *const pxr_UsdPrim, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearAssetInfoByKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAssetInfo(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAssetInfo(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAssetInfoKey(this_: *const pxr_UsdPrim, result: *mut c_bool, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAssetInfoKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredAssetInfo(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredAssetInfo(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredAssetInfoKey(this_: *const pxr_UsdPrim, result: *mut c_bool, keyPath: *const pxr_TfToken);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredAssetInfoKey(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, keyPath: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetDocumentation(this_: *const pxr_UsdPrim, result: *mut std_string);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetDocumentation(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetDocumentation(this_: *const pxr_UsdPrim, result: *mut c_bool, doc: *const std_string);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_SetDocumentation(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool, doc: *const std_string);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearDocumentation(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ClearDocumentation(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredDocumentation(this_: *const pxr_UsdPrim, result: *mut c_bool);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_HasAuthoredDocumentation(this_: *const pxrInternal_v0_22_pxrReserved_UsdPrim, result: *mut bool);
 
 pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_GetNamespaceDelimiter(result: *mut c_char);
 
-pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ctor_1(result: *mut *mut pxr_UsdPrim);
+pub fn pxrInternal_v0_22_pxrReserved_UsdPrim_ctor_1(result: *mut *mut pxrInternal_v0_22_pxrReserved_UsdPrim);
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfPath__ctor(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfPath_);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfPath__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfPath_, begin: *const pxr_SdfPath, end: *const pxr_SdfPath);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfPath__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfPath_, begin: *const pxrInternal_v0_22_pxrReserved_SdfPath, end: *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfPath__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_SdfPath_, result: *mut *const pxr_SdfPath);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfPath__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_SdfPath_, result: *mut *const pxrInternal_v0_22_pxrReserved_SdfPath);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfPath__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfPath_, result: *mut *mut pxr_SdfPath);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfPath__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfPath_, result: *mut *mut pxrInternal_v0_22_pxrReserved_SdfPath);
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfPath__size(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_SdfPath_, result: *mut c_ulonglong);
 
@@ -2075,11 +2100,11 @@ pub fn std_vector_std_basic_string_char__dtor(this_: *mut std_vector_std_basic_s
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_TfToken__ctor(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_TfToken_);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_TfToken__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_TfToken_, begin: *const pxr_TfToken, end: *const pxr_TfToken);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_TfToken__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_TfToken_, begin: *const pxrInternal_v0_22_pxrReserved_TfToken, end: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_TfToken__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_TfToken_, result: *mut *const pxr_TfToken);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_TfToken__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_TfToken_, result: *mut *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_TfToken__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_TfToken_, result: *mut *mut pxr_TfToken);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_TfToken__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_TfToken_, result: *mut *mut pxrInternal_v0_22_pxrReserved_TfToken);
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_TfToken__size(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_TfToken_, result: *mut c_ulonglong);
 
@@ -2089,17 +2114,17 @@ pub fn std_vector_pxrInternal_v0_22_pxrReserved_TfToken__move_ctor(result: *mut 
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_TfToken__dtor(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_TfToken_);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__op_neg(this_: *const pxr_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, result: *mut *mut pxr_SdfPropertySpec);
+pub fn pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__op_neg(this_: *const pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, result: *mut *mut pxrInternal_v0_22_pxrReserved_SdfPropertySpec);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__op_neg(this_: *const pxr_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, result: *mut *const pxr_SdfPropertySpec);
+pub fn pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__op_neg(this_: *const pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, result: *mut *const pxrInternal_v0_22_pxrReserved_SdfPropertySpec);
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__ctor(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, begin: *const pxr_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, end: *const pxr_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, begin: *const pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, end: *const pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, result: *mut *const pxr_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, result: *mut *const pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, result: *mut *mut pxr_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, result: *mut *mut pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_);
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__size(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, result: *mut c_ulonglong);
 
@@ -2111,11 +2136,11 @@ pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrR
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__ctor(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, begin: *const pxr_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, end: *const pxr_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, begin: *const pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, end: *const pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, result: *mut *const pxr_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, result: *mut *const pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, result: *mut *mut pxr_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, result: *mut *mut pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_);
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__size(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_, result: *mut c_ulonglong);
 
@@ -2125,31 +2150,31 @@ pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_2
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec__dtor(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_const_pxrInternal_v0_22_pxrReserved_SdfPropertySpec_);
 
-pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage__ctor(result: *mut *mut pxr_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage_);
+pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage__ctor(result: *mut *mut pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage_);
 
-pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage__get(this_: *const pxr_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage_, result: *mut *const pxr_UsdStage);
+pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage__get(this_: *const pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage_, result: *mut *const pxrInternal_v0_22_pxrReserved_UsdStage);
 
-pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage__get_mut(this_: *mut pxr_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage_, result: *mut *mut pxr_UsdStage);
+pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage__get_mut(this_: *mut pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage_, result: *mut *mut pxrInternal_v0_22_pxrReserved_UsdStage);
 
-pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage__dtor(this_: *mut pxr_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage_);
+pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage__dtor(this_: *mut pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_UsdStage_);
 
 pub fn std_map_pxrInternal_v0_22_pxrReserved_TfToken_pxrInternal_v0_22_pxrReserved_VtValue_pxrInternal_v0_22_pxrReserved_TfDictionaryLessThan__ctor(result: *mut *mut std_map_pxrInternal_v0_22_pxrReserved_TfToken_pxrInternal_v0_22_pxrReserved_VtValue_pxrInternal_v0_22_pxrReserved_TfDictionaryLessThan_);
 
-pub fn std_map_pxrInternal_v0_22_pxrReserved_TfToken_pxrInternal_v0_22_pxrReserved_VtValue_pxrInternal_v0_22_pxrReserved_TfDictionaryLessThan__at(this_: *const std_map_pxrInternal_v0_22_pxrReserved_TfToken_pxrInternal_v0_22_pxrReserved_VtValue_pxrInternal_v0_22_pxrReserved_TfDictionaryLessThan_, result: *mut *const pxr_VtValue, key: *const pxr_TfToken);
+pub fn std_map_pxrInternal_v0_22_pxrReserved_TfToken_pxrInternal_v0_22_pxrReserved_VtValue_pxrInternal_v0_22_pxrReserved_TfDictionaryLessThan__at(this_: *const std_map_pxrInternal_v0_22_pxrReserved_TfToken_pxrInternal_v0_22_pxrReserved_VtValue_pxrInternal_v0_22_pxrReserved_TfDictionaryLessThan_, result: *mut *const pxrInternal_v0_22_pxrReserved_VtValue, key: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
-pub fn std_map_pxrInternal_v0_22_pxrReserved_TfToken_pxrInternal_v0_22_pxrReserved_VtValue_pxrInternal_v0_22_pxrReserved_TfDictionaryLessThan__at_mut(this_: *mut std_map_pxrInternal_v0_22_pxrReserved_TfToken_pxrInternal_v0_22_pxrReserved_VtValue_pxrInternal_v0_22_pxrReserved_TfDictionaryLessThan_, result: *mut *mut pxr_VtValue, key: *const pxr_TfToken);
+pub fn std_map_pxrInternal_v0_22_pxrReserved_TfToken_pxrInternal_v0_22_pxrReserved_VtValue_pxrInternal_v0_22_pxrReserved_TfDictionaryLessThan__at_mut(this_: *mut std_map_pxrInternal_v0_22_pxrReserved_TfToken_pxrInternal_v0_22_pxrReserved_VtValue_pxrInternal_v0_22_pxrReserved_TfDictionaryLessThan_, result: *mut *mut pxrInternal_v0_22_pxrReserved_VtValue, key: *const pxrInternal_v0_22_pxrReserved_TfToken);
 
 pub fn std_map_pxrInternal_v0_22_pxrReserved_TfToken_pxrInternal_v0_22_pxrReserved_VtValue_pxrInternal_v0_22_pxrReserved_TfDictionaryLessThan__dtor(this_: *mut std_map_pxrInternal_v0_22_pxrReserved_TfToken_pxrInternal_v0_22_pxrReserved_VtValue_pxrInternal_v0_22_pxrReserved_TfDictionaryLessThan_);
 
-pub fn pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec__op_neg(this_: *const pxr_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_, result: *mut *mut pxr_SdfPrimSpec);
+pub fn pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec__op_neg(this_: *const pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_, result: *mut *mut pxrInternal_v0_22_pxrReserved_SdfPrimSpec);
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec__ctor(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_, begin: *const pxr_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_, end: *const pxr_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_, begin: *const pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_, end: *const pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_, result: *mut *const pxr_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_, result: *mut *const pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_, result: *mut *mut pxr_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_, result: *mut *mut pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_);
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec__size(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrReserved_SdfPrimSpec_, result: *mut c_ulonglong);
 
@@ -2161,11 +2186,11 @@ pub fn std_vector_pxrInternal_v0_22_pxrReserved_SdfHandle_pxrInternal_v0_22_pxrR
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty__ctor(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, begin: *const pxr_UsdProperty, end: *const pxr_UsdProperty);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, begin: *const pxrInternal_v0_22_pxrReserved_UsdProperty, end: *const pxrInternal_v0_22_pxrReserved_UsdProperty);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, result: *mut *const pxr_UsdProperty);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, result: *mut *const pxrInternal_v0_22_pxrReserved_UsdProperty);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, result: *mut *mut pxr_UsdProperty);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, result: *mut *mut pxrInternal_v0_22_pxrReserved_UsdProperty);
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty__size(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty_, result: *mut c_ulonglong);
 
@@ -2177,11 +2202,11 @@ pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdProperty__dtor(this_: *mut st
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute__ctor(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute_);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute_, begin: *const pxr_UsdAttribute, end: *const pxr_UsdAttribute);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute_, begin: *const pxrInternal_v0_22_pxrReserved_UsdAttribute, end: *const pxrInternal_v0_22_pxrReserved_UsdAttribute);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute_, result: *mut *const pxr_UsdAttribute);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute_, result: *mut *const pxrInternal_v0_22_pxrReserved_UsdAttribute);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute_, result: *mut *mut pxr_UsdAttribute);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute_, result: *mut *mut pxrInternal_v0_22_pxrReserved_UsdAttribute);
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute__size(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute_, result: *mut c_ulonglong);
 
@@ -2193,11 +2218,11 @@ pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdAttribute__dtor(this_: *mut s
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship__ctor(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship_);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship_, begin: *const pxr_UsdRelationship, end: *const pxr_UsdRelationship);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship_, begin: *const pxrInternal_v0_22_pxrReserved_UsdRelationship, end: *const pxrInternal_v0_22_pxrReserved_UsdRelationship);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship_, result: *mut *const pxr_UsdRelationship);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship_, result: *mut *const pxrInternal_v0_22_pxrReserved_UsdRelationship);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship_, result: *mut *mut pxr_UsdRelationship);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship_, result: *mut *mut pxrInternal_v0_22_pxrReserved_UsdRelationship);
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship__size(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship_, result: *mut c_ulonglong);
 
@@ -2207,21 +2232,21 @@ pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship__move_ctor(resul
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship__dtor(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdRelationship_);
 
-pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer__ctor(result: *mut *mut pxr_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer_);
+pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer__ctor(result: *mut *mut pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer_);
 
-pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer__get(this_: *const pxr_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer_, result: *mut *const pxr_SdfLayer);
+pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer__get(this_: *const pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer_, result: *mut *const pxrInternal_v0_22_pxrReserved_SdfLayer);
 
-pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer__get_mut(this_: *mut pxr_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer_, result: *mut *mut pxr_SdfLayer);
+pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer__get_mut(this_: *mut pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer_, result: *mut *mut pxrInternal_v0_22_pxrReserved_SdfLayer);
 
-pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer__dtor(this_: *mut pxr_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer_);
+pub fn pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer__dtor(this_: *mut pxrInternal_v0_22_pxrReserved_TfWeakPtr_pxrInternal_v0_22_pxrReserved_SdfLayer_);
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim__ctor(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim_);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim_, begin: *const pxr_UsdPrim, end: *const pxr_UsdPrim);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim__from_begin_and_end(result: *mut *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim_, begin: *const pxrInternal_v0_22_pxrReserved_UsdPrim, end: *const pxrInternal_v0_22_pxrReserved_UsdPrim);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim_, result: *mut *const pxr_UsdPrim);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim__data(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim_, result: *mut *const pxrInternal_v0_22_pxrReserved_UsdPrim);
 
-pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim_, result: *mut *mut pxr_UsdPrim);
+pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim__data_mut(this_: *mut std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim_, result: *mut *mut pxrInternal_v0_22_pxrReserved_UsdPrim);
 
 pub fn std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim__size(this_: *const std_vector_pxrInternal_v0_22_pxrReserved_UsdPrim_, result: *mut c_ulonglong);
 

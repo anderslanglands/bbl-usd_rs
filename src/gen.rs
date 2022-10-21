@@ -3,7 +3,7 @@ use bbl::*;
 use std::path::{Path, PathBuf};
 
 pub fn main() -> Result<()> {
-    env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("debug"))
+    env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("warn"))
         .format_timestamp(None)
         .init();
 
@@ -259,6 +259,7 @@ pub fn specialize_methods(
 
     Ok(())
 }
+
 pub fn create_tfweakptr(
     c: Cursor,
     ast: &mut AST,
