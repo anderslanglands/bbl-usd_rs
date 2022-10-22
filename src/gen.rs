@@ -81,6 +81,9 @@ pub fn main() -> Result<()> {
         fun(&mut ast)?;
     }
 
+    // finally monomorphize the AST to flatten all templates
+    let ast = ast.monomorphize()?;
+
     let out_dir = std::env::var("OUT_DIR").unwrap();
     let ffi_path = Path::new(&std::env::var("CARGO_MANIFEST_DIR").unwrap())
         .join("src")
@@ -296,14 +299,14 @@ pub fn create_tfweakptr(
 
     // create a new specialization of our manually generate template class with the template argument type we've extracted
     let cts =
-        ClassTemplateSpecialization::new(usr_tmpl, c.usr(), &name, template_arguments, namespaces);
+        ClassTemplateSpecialization::new(usr_tmpl, c.usr(), &name, template_arguments.clone(), namespaces, NeedsImplicit::default(), false);
 
     // and insert it into the AST and add the specialization to the template class. The latter step just silences a
     // warning about it being ignored currently, but later we'll need this info in order to generate nice names for the
     // specialized classes by associating them with typedefs
     let id = ast.insert_class_template_specialization(cts);
     let cd = ast.get_class_mut(usr_tmpl).unwrap();
-    cd.add_specialization(id);
+    cd.add_specialization(template_arguments, c.usr());
 
     Ok(c.usr())
 }
